@@ -6,10 +6,7 @@ let url4 = "https://swapi.py4e.com/api/species/?page=";
 let url5 = "https://swapi.py4e.com/api/planets/?page=";
 let url6 = "https://swapi.py4e.com/api/starships/?page=";
 
-
-
-
-async function obtener(url, callback, llave1, llave2,titulo, img) {
+async function obtener(url, callback, llave1, llave2, titulo, img) {
   try {
     const response = await fetch(url);
     if (!response.ok) {
@@ -22,7 +19,7 @@ async function obtener(url, callback, llave1, llave2,titulo, img) {
     console.error("Error al obtener los personajes:", error);
   }
 }
-async function obtener_multiples(url, callback, llave1, llave2, titulo,img) {
+async function obtener_multiples(url, callback, llave1, llave2, titulo, img) {
   let todosArrays = [];
   for (let i = 1; i < 10; i++) {
     try {
@@ -40,23 +37,27 @@ async function obtener_multiples(url, callback, llave1, llave2, titulo,img) {
     } catch (error) {
       console.error("Error al obtener los personajes:", error);
     }
-  } console.log(todosArrays)
-  callback(todosArrays, llave1, llave2,titulo,img);
+  }
+  console.log(todosArrays);
+  callback(todosArrays, llave1, llave2, titulo, img);
 }
 function mayus(llave1) {
   let mayuscula = llave1[0].toUpperCase() + llave1.substring(1);
   return mayuscula;
 }
 
-let Remplazo_titulo = document.createElement("h2")
-let contenedor_padre = document.getElementById("Planetas")
-let img1 = "https://i.gifer.com/fy8R.gif"
-function mostrarPersonajes_funciongeneral(data, llave1, llave2,titulo,img) {
-  Remplazo_titulo.classList.add("titulo9")
-  Remplazo_titulo.textContent = titulo
-  contenedor_padre.replaceChild(Remplazo_titulo, document.querySelector("h3"))
-  const imagen = document.getElementById("imagencontenedor")
-  imagen.setAttribute("src",img)
+let Remplazo_titulo = document.createElement("h2");
+let contenedor_padre = document.getElementById("Planetas");
+let img1 = "https://i.gifer.com/fy8R.gif";
+let img2 ="https://mir-s3-cdn-cf.behance.net/project_modules/disp/2af8f728429649.55bfe8b38985c.gif"
+
+
+function mostrarPersonajes_funciongeneral(data, llave1, llave2, titulo, img) {
+  Remplazo_titulo.classList.add("titulo9");
+  Remplazo_titulo.textContent = titulo;
+  contenedor_padre.replaceChild(Remplazo_titulo, document.querySelector("h3"));
+  const imagen = document.getElementById("imagencontenedor");
+  imagen.setAttribute("src", img);
   ContainerAll.innerHTML = "";
   data.forEach((element) => {
     const div = document.createElement("div");
@@ -72,42 +73,38 @@ function mostrarPersonajes_funciongeneral(data, llave1, llave2,titulo,img) {
         `;
     ContainerAll.append(div);
   });
-   
 }
 
 //Lammados hechos con URL X8
 
-obtener_multiples(url, mostrarPersonajes_funciongeneral,"name", "height","Personajes",img1)
-// obtener_multiples(url, mostrarPersonajes_funciongeneral,"name", "birth_year" ,"Personajes")
-// obtener_multiples(url, mostrarPersonajes_funciongeneral,"name", "eye_color" ,"Personajes")
-// obtener_multiples(url, mostrarPersonajes_funciongeneral,"name", "hair_color" ,"Personajes")
+// obtener_multiples(url,mostrarPersonajes_funciongeneral,"name","height","Characters",img1);
+// obtener_multiples(url, mostrarPersonajes_funciongeneral,"name", "birth_year" ,"Characters")
+// obtener_multiples(url, mostrarPersonajes_funciongeneral,"name", "eye_color" ,"Characters")
+// obtener_multiples(url, mostrarPersonajes_funciongeneral,"name", "hair_color" ,"Characters")
+// obtener_multiples(url, mostrarPersonajes_funciongeneral,"name", "skin_color","Characters" )
+// obtener_multiples(url, mostrarPersonajes_funciongeneral,"name", "gender" ,"Characters")
 
-// obtener_multiples(url, mostrarPersonajes_funciongeneral,"name", "skin_color","Personajes" )
-// obtener_multiples(url, mostrarPersonajes_funciongeneral,"name", "gender" ,"Personajes")
-// obtener_multiples(url, mostrarPersonajes_funciongeneral,"name", "birth_year" ,"Personajes")
 
 //Lammados hechos con URL2 X6
-// obtener(url2,mostrarPersonajes_funciongeneral,"title","director","Peliculas");
-// obtener(url2,mostrarPersonajes_funciongeneral,"title","episode_id","Peliculas");
-// obtener(url2,mostrarPersonajes_funciongeneral,"title","edited","Peliculas");
-// obtener(url2,mostrarPersonajes_funciongeneral,"title","opening_crawl","Peliculas");
-// obtener(url2,mostrarPersonajes_funciongeneral,"title","producer","Peliculas");
-// obtener(url2,mostrarPersonajes_funciongeneral,"title","release_date","Peliculas");
-
+// obtener(url2,mostrarPersonajes_funciongeneral,"title","director","Movies,img1");
+// obtener(url2,mostrarPersonajes_funciongeneral,"title","episode_id","Movies",img1);
+// obtener(url2,mostrarPersonajes_funciongeneral,"title","edited","Movies",img1);
+// obtener(url2,mostrarPersonajes_funciongeneral,"title","opening_crawl","Movies",img1); No usar
+// obtener(url2,mostrarPersonajes_funciongeneral,"title","producer","Movies",img1);
+// obtener(url2,mostrarPersonajes_funciongeneral,"title","release_date","Movies",img1);
 
 //Lammados hechos con URL3 X11
-// obtener_multiples(url3, mostrarPersonajes_funciongeneral,"name", "cargo_capacity" )
-// obtener_multiples(url3, mostrarPersonajes_funciongeneral,"name", "consumables" )
-// obtener_multiples(url3, mostrarPersonajes_funciongeneral,"name", "cost_in_credits" )
-// obtener_multiples(url3, mostrarPersonajes_funciongeneral,"name", "created" )
+// obtener_multiples(url3, mostrarPersonajes_funciongeneral,"name", "cargo_capacity","Vehicle", img2)
+// obtener_multiples(url3, mostrarPersonajes_funciongeneral,"name", "consumables",Vehicle, img2 )
+// obtener_multiples(url3, mostrarPersonajes_funciongeneral,"name", "cost_in_credits" ,Vehicle, img2)
+// obtener_multiples(url3, mostrarPersonajes_funciongeneral,"name", "created" ,Vehicle, img2)
 // obtener_multiples(url3, mostrarPersonajes_funciongeneral,"name", "crew" )
-// obtener_multiples(url3, mostrarPersonajes_funciongeneral,"name", "length" )
-// obtener_multiples(url3, mostrarPersonajes_funciongeneral,"name", "manufacturer" )
-// obtener_multiples(url3, mostrarPersonajes_funciongeneral,"name", "max_atmosphering_speed" )
-// obtener_multiples(url3, mostrarPersonajes_funciongeneral,"name", "model" )
-// obtener_multiples(url3, mostrarPersonajes_funciongeneral,"name", "passengers" )
-// obtener_multiples(url3, mostrarPersonajes_funciongeneral,"name", "vehicle_class" )
-
+// obtener_multiples(url3, mostrarPersonajes_funciongeneral,"name", "length",Vehicle, img2 )
+// obtener_multiples(url3, mostrarPersonajes_funciongeneral,"name", "manufacturer" ,Vehicle, img2)
+// obtener_multiples(url3, mostrarPersonajes_funciongeneral,"name", "max_atmosphering_speed",Vehicle, img2 )
+// obtener_multiples(url3, mostrarPersonajes_funciongeneral,"name", "model" ,Vehicle, img2)
+// obtener_multiples(url3, mostrarPersonajes_funciongeneral,"name", "passengers" ,Vehicle, img2)
+// obtener_multiples(url3, mostrarPersonajes_funciongeneral,"name", "vehicle_class" ,Vehicle, img2)
 
 //llamados hechos con URL4 X5
 // obtener_multiples(url4, mostrarPersonajes_funciongeneral,"name", "classification" )
@@ -125,8 +122,6 @@ obtener_multiples(url, mostrarPersonajes_funciongeneral,"name", "height","Person
 // obtener_multiples(url5, mostrarPersonajes_funciongeneral,"name","population" )
 // obtener_multiples(url5, mostrarPersonajes_funciongeneral,"name","population" )
 // obtener_multiples(url5, mostrarPersonajes_funciongeneral,"name","surface_water" )
-
-
 
 //llamador URL 6 x5
 // obtener_multiples(url6, mostrarPersonajes_funciongeneral,"name","model" )
