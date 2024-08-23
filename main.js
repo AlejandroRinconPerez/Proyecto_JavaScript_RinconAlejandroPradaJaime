@@ -74,3 +74,63 @@ function mostrarPersonajes_funciongeneral(data, llave1, llave2,titulo,img) {
   });
    
 }
+
+//Lammados hechos con URL X8
+
+obtener_multiples(url, mostrarPersonajes_funciongeneral,"name", "height","Personajes",img1)
+// obtener_multiples(url, mostrarPersonajes_funciongeneral,"name", "birth_year" ,"Personajes")
+// obtener_multiples(url, mostrarPersonajes_funciongeneral,"name", "eye_color" ,"Personajes")
+// obtener_multiples(url, mostrarPersonajes_funciongeneral,"name", "hair_color" ,"Personajes")
+
+// obtener_multiples(url, mostrarPersonajes_funciongeneral,"name", "skin_color","Personajes" )
+// obtener_multiples(url, mostrarPersonajes_funciongeneral,"name", "gender" ,"Personajes")
+// obtener_multiples(url, mostrarPersonajes_funciongeneral,"name", "birth_year" ,"Personajes")
+
+//Lammados hechos con URL2 X6
+// obtener(url2,mostrarPersonajes_funciongeneral,"title","director","Peliculas");
+// obtener(url2,mostrarPersonajes_funciongeneral,"title","episode_id","Peliculas");
+// obtener(url2,mostrarPersonajes_funciongeneral,"title","edited","Peliculas");
+// obtener(url2,mostrarPersonajes_funciongeneral,"title","opening_crawl","Peliculas");
+// obtener(url2,mostrarPersonajes_funciongeneral,"title","producer","Peliculas");
+// obtener(url2,mostrarPersonajes_funciongeneral,"title","release_date","Peliculas");
+
+
+//Lammados hechos con URL3 X11
+// obtener_multiples(url3, mostrarPersonajes_funciongeneral,"name", "cargo_capacity" )
+// obtener_multiples(url3, mostrarPersonajes_funciongeneral,"name", "consumables" )
+// obtener_multiples(url3, mostrarPersonajes_funciongeneral,"name", "cost_in_credits" )
+// obtener_multiples(url3, mostrarPersonajes_funciongeneral,"name", "created" )
+// obtener_multiples(url3, mostrarPersonajes_funciongeneral,"name", "crew" )
+// obtener_multiples(url3, mostrarPersonajes_funciongeneral,"name", "length" )
+// obtener_multiples(url3, mostrarPersonajes_funciongeneral,"name", "manufacturer" )
+// obtener_multiples(url3, mostrarPersonajes_funciongeneral,"name", "max_atmosphering_speed" )
+// obtener_multiples(url3, mostrarPersonajes_funciongeneral,"name", "model" )
+// obtener_multiples(url3, mostrarPersonajes_funciongeneral,"name", "passengers" )
+// obtener_multiples(url3, mostrarPersonajes_funciongeneral,"name", "vehicle_class" )
+
+
+//llamados hechos con URL4 X5
+// obtener_multiples(url4, mostrarPersonajes_funciongeneral,"name", "classification" )
+// obtener_multiples(url4, mostrarPersonajes_funciongeneral,"name", "designation" )
+// obtener_multiples(url4, mostrarPersonajes_funciongeneral,"name", "language" )
+// obtener_multiples(url4, mostrarPersonajes_funciongeneral,"name", "average_height" )
+// obtener_multiples(url4, mostrarPersonajes_funciongeneral,"name", "average_lifespan" )
+
+//llamador URL 5 X 7
+
+//obtener_multiples(url5, mostrarPersonajes_funciongeneral,"name","diameter" )
+// obtener_multiples(url5, mostrarPersonajes_funciongeneral,"name","rotation_period" )
+// obtener_multiples(url5, mostrarPersonajes_funciongeneral,"name","orbital_period" )
+// obtener_multiples(url5, mostrarPersonajes_funciongeneral,"name","gravity" )
+// obtener_multiples(url5, mostrarPersonajes_funciongeneral,"name","population" )
+// obtener_multiples(url5, mostrarPersonajes_funciongeneral,"name","population" )
+// obtener_multiples(url5, mostrarPersonajes_funciongeneral,"name","surface_water" )
+
+
+
+//llamador URL 6 x5
+// obtener_multiples(url6, mostrarPersonajes_funciongeneral,"name","model" )
+// obtener_multiples(url6, mostrarPersonajes_funciongeneral,"name","starship_class" )
+// obtener_multiples(url6, mostrarPersonajes_funciongeneral,"name","passengers" )
+// obtener_multiples(url6, mostrarPersonajes_funciongeneral,"name","hyperdrive_rating" )
+// obtener_multiples(url6, mostrarPersonajes_funciongeneral,"name","consumables" )
