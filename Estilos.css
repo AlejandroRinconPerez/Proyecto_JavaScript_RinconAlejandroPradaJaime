@@ -58,7 +58,7 @@ header{
     justify-content: center;
     align-items: center;
     justify-items: center;
-    background-color: black;
+    background-color: rgba(0, 0, 0, 0.226);
     position: sticky;
     height: 100px;
     width: 100%;
