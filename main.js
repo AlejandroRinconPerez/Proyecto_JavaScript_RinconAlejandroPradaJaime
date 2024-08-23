@@ -95,16 +95,16 @@ function mostrarPersonajes_funciongeneral(data, llave1, llave2, titulo, img) {
 
 //Lammados hechos con URL3 X11
 // obtener_multiples(url3, mostrarPersonajes_funciongeneral,"name", "cargo_capacity","Vehicle", img2)
-// obtener_multiples(url3, mostrarPersonajes_funciongeneral,"name", "consumables",Vehicle, img2 )
-// obtener_multiples(url3, mostrarPersonajes_funciongeneral,"name", "cost_in_credits" ,Vehicle, img2)
-// obtener_multiples(url3, mostrarPersonajes_funciongeneral,"name", "created" ,Vehicle, img2)
+// obtener_multiples(url3, mostrarPersonajes_funciongeneral,"name", "consumables","Vehicle", img2 )
+// obtener_multiples(url3, mostrarPersonajes_funciongeneral,"name", "cost_in_credits" ,"Vehicle", img2)
+// obtener_multiples(url3, mostrarPersonajes_funciongeneral,"name", "created" ,"Vehicle", img2)
 // obtener_multiples(url3, mostrarPersonajes_funciongeneral,"name", "crew" )
-// obtener_multiples(url3, mostrarPersonajes_funciongeneral,"name", "length",Vehicle, img2 )
-// obtener_multiples(url3, mostrarPersonajes_funciongeneral,"name", "manufacturer" ,Vehicle, img2)
-// obtener_multiples(url3, mostrarPersonajes_funciongeneral,"name", "max_atmosphering_speed",Vehicle, img2 )
-// obtener_multiples(url3, mostrarPersonajes_funciongeneral,"name", "model" ,Vehicle, img2)
-// obtener_multiples(url3, mostrarPersonajes_funciongeneral,"name", "passengers" ,Vehicle, img2)
-// obtener_multiples(url3, mostrarPersonajes_funciongeneral,"name", "vehicle_class" ,Vehicle, img2)
+// obtener_multiples(url3, mostrarPersonajes_funciongeneral,"name", "length","Vehicle", img2 )
+// obtener_multiples(url3, mostrarPersonajes_funciongeneral,"name", "manufacturer" ,"Vehicle", img2)
+// obtener_multiples(url3, mostrarPersonajes_funciongeneral,"name", "max_atmosphering_speed","Vehicle", img2 )
+// obtener_multiples(url3, mostrarPersonajes_funciongeneral,"name", "model" ,"Vehicle", img2)
+// obtener_multiples(url3, mostrarPersonajes_funciongeneral,"name", "passengers" ,"Vehicle", img2)
+// obtener_multiples(url3, mostrarPersonajes_funciongeneral,"name", "vehicle_class" ,"Vehicle", img2)
 
 //llamados hechos con URL4 X5
 // obtener_multiples(url4, mostrarPersonajes_funciongeneral,"name", "classification" )
