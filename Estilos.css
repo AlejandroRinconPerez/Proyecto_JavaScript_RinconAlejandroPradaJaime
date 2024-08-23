@@ -65,8 +65,24 @@ header{
     top: 0;
     z-index: 99;
     font-family: "DINN";
-}
+    background-image:URL("https://lumiere-a.akamaihd.net/v1/images/sw-skeleton-crew-tentpole-desktop_ceb6c251.jpeg?region=0,0,1600,600&width=1536") ;
+    background-position: bottom right;
+    background-size: cover;
+    
+    
 
+}
+.header__nav{
+    background-color: rgba(0, 0, 0, 0.226);
+    width: 100%;
+    margin: 0px;
+}
+#img_fixed{
+   
+    position: sticky;
+    top: 100px;
+    
+}
 .header__list{
     display: flex;
     list-style: none;
