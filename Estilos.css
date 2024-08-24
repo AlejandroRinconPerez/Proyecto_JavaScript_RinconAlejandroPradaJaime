@@ -58,7 +58,7 @@ header{
     justify-content: center;
     align-items: center;
     justify-items: center;
-    background-color: rgba(0, 0, 0, 0.226);
+    background-color: rgba(190, 30, 30, 0.226);
     position: sticky;
     height: 100px;
     width: 100%;
@@ -89,6 +89,7 @@ header{
     text-transform: uppercase;
     align-items: center;
     justify-content: center;
+    margin: 0px;
 }
 
 .header__item{
@@ -130,7 +131,7 @@ a{
     position: absolute;
     top: 100%; 
     left: 0;
-    background-color: #000;
+    background-color: #000000;
     padding: 0.5rem;
     list-style: none;
     margin: 0;
@@ -195,10 +196,10 @@ a{
 }
 .titulo9{
     grid-area:head;
-    font-size: 9em;
+    font-size: 7.5em;
     margin: 0px;
     text-shadow: 0px 0px 10px rgb(255, 255, 255);
-    color: #d2eff5;
+    color: #fdfdfd9f;
     position: sticky;
     top: 80px;
     
