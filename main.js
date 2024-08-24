@@ -91,12 +91,12 @@ function mostrarPersonajes_funciongeneral(data, llave1, llave2, titulo, img) {
 // obtener(url2,mostrarPersonajes_funciongeneral,"title","edited","Movies",img1);
 // obtener(url2,mostrarPersonajes_funciongeneral,"title","opening_crawl","Movies",img1); No usar
 // obtener(url2,mostrarPersonajes_funciongeneral,"title","producer","Movies",img1);
-obtener(url2,mostrarPersonajes_funciongeneral,"title","release_date","Movies",img1);
+// obtener(url2,mostrarPersonajes_funciongeneral,"title","release_date","Movies",img1);
 
 //Lammados hechos con URL3 X11
 // obtener_multiples(url3, mostrarPersonajes_funciongeneral,"name", "cargo_capacity","Vehicle", img2)
 // obtener_multiples(url3, mostrarPersonajes_funciongeneral,"name", "consumables","Vehicle", img2 )
-// obtener_multiples(url3, mostrarPersonajes_funciongeneral,"name", "cost_in_credits" ,"Vehicle", img2)
+obtener_multiples(url3, mostrarPersonajes_funciongeneral,"name", "cost_in_credits" ,"Vehicle", img2)
 // obtener_multiples(url3, mostrarPersonajes_funciongeneral,"name", "created" ,"Vehicle", img2)
 // obtener_multiples(url3, mostrarPersonajes_funciongeneral,"name", "crew" )
 // obtener_multiples(url3, mostrarPersonajes_funciongeneral,"name", "length","Vehicle", img2 )

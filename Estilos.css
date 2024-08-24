@@ -73,7 +73,7 @@ header{
 
 }
 .header__nav{
-    background-color: rgba(0, 0, 0, 0.226);
+    background-color: rgba(0, 0, 0, 0.801);
     width: 100%;
     margin: 0px;
 }
@@ -285,7 +285,7 @@ p {
    justify-content: center;
    align-items: center;
    width: 20vw;
-   height: 20vw;
+   
    border-radius: 5%;
    margin: 1.5vw;
    border: solid, 0.3vw,#00CCFF;
