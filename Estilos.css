@@ -91,7 +91,48 @@ body {
     transition: 1s ease all;
 }
 
+.Inicio {
+    width: 100vw;
+    height: auto;
+    background-color: #000;
+    color: white;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+.Skeleton {
+    width: 100%;
+}
+
+.Carrusel {
+    width: 100vw;
+    height: 10rem;
+    display: flex;
+}
+
+.Carrusel-item {
+    width: 0px;
+    flex-grow: 1;
+    object-fit: cover;
+    opacity: .3;
+    transition: .5s ease;
+    border-radius: 10px;
+}
+
+.Carrusel-item:hover {
+    width: 10rem;
+    opacity: 1;
+    filter: contrast(120%);
+}
+
+.Carrusel:hover>.Carrusel-item:not(:hover) {
+    filter: blur(5px);
+}
+
 header {
+    display: none;
     display: flex;
     flex-direction: column;
     justify-content: center;
