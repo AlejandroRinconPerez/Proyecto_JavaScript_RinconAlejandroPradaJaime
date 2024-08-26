@@ -46,27 +46,38 @@ function mayus(llave1) {
   return mayuscula;
 }
 
-let Remplazo_titulo = document.createElement("h2");
-let contenedor_padre = document.getElementById("Planetas");
-let img1 = "https://i.gifer.com/fy8R.gif";
-let img2 ="https://mir-s3-cdn-cf.behance.net/project_modules/disp/2af8f728429649.55bfe8b38985c.gif"
 
+
+let img1 = "https://i.pinimg.com/originals/9b/f6/9e/9bf69e82d471f2f94dc8223043730d06.gif";
+let img2 ="https://media.tenor.com/uT-0_4jiNKYAAAAj/krrsantan-wookie.gif"
+let img3 = "https://i.pinimg.com/originals/f1/e6/73/f1e673dd44795b6b50bf3941093932b2.gif";
+let img4 = "https://i.pinimg.com/originals/81/35/24/8135244303e3859332cd4124ef727a2c.gif";
+let img5 = "https://cdn.pixabay.com/animation/2023/06/30/16/16/16-16-16-137_512.gif";
+let img6 = "https://www.komar.de/media/catalog/product/cache/13/image/9df78eab33525d08d6e5fb8d27136e95/0/2/026-dvd2_star_wars_poster_classic_1_web.jpg";
+
+let Remplazo_titulo = document.createElement("h2");
+let contenedor_padre = document.getElementById("Contenedor");
 
 function mostrarPersonajes_funciongeneral(data, llave1, llave2, titulo, img) {
-  Remplazo_titulo.classList.add("titulo9");
+  Remplazo_titulo.classList.add("titulo1");
   Remplazo_titulo.textContent = titulo;
-  contenedor_padre.replaceChild(Remplazo_titulo, document.querySelector("h3"));
-  const imagen = document.getElementById("imagencontenedor");
+  contenedor_padre.replaceChild(Remplazo_titulo, contenedor_padre.querySelector("h1"));
+  let contendor_img = document.getElementById("ContenedorImagen");
+  const imagen = document.createElement("img");
   imagen.setAttribute("src", img);
+  contendor_img.replaceWith(imagen);
+  contenedor_padre.classList.replace("Contenedor", "ContenedorPrincipal")
+  ContainerAll.classList.replace("ContainerPadre", "ContenedorPadre")
+  imagen.classList.add("imagencontenedor1");
   ContainerAll.innerHTML = "";
   data.forEach((element) => {
     const div = document.createElement("div");
     div.innerHTML = `
             <div class="ContainerUnidad">
-                 <img src="./Multimedia/Personajes.png" alt="" class = "img">
-                <h2 class="titulo2">${element[llave1]}</h2>
+                 <h2 class="titulo2">${element[llave1]}</h2>
+                 <img src="./Multimedia/Personajes.png" alt="Logo" class="logop">
                 <div class="Container">
-                    <p class=" label_titulo">${mayus(llave2)}</p>
+                    <p class="label_titulo">${mayus(llave2)}</p>
                     <p class="label">${element[llave2] || "N/A"}</p>
                 </div>
             </div>
@@ -77,9 +88,9 @@ function mostrarPersonajes_funciongeneral(data, llave1, llave2, titulo, img) {
 
 //Lammados hechos con URL X8
 
-// obtener_multiples(url,mostrarPersonajes_funciongeneral,"name","height","Characters",img1);
+obtener_multiples(url,mostrarPersonajes_funciongeneral,"name","height","Characters",img1);
 // obtener_multiples(url, mostrarPersonajes_funciongeneral,"name", "birth_year" ,"Characters")
-// obtener_multiples(url, mostrarPersonajes_funciongeneral,"name", "eye_color" ,"Characters")
+//obtener_multiples(url, mostrarPersonajes_funciongeneral,"name", "eye_color" ,"Characters", img1)
 // obtener_multiples(url, mostrarPersonajes_funciongeneral,"name", "hair_color" ,"Characters")
 // obtener_multiples(url, mostrarPersonajes_funciongeneral,"name", "skin_color","Characters" )
 // obtener_multiples(url, mostrarPersonajes_funciongeneral,"name", "gender" ,"Characters")
@@ -96,7 +107,7 @@ function mostrarPersonajes_funciongeneral(data, llave1, llave2, titulo, img) {
 //Lammados hechos con URL3 X11
 // obtener_multiples(url3, mostrarPersonajes_funciongeneral,"name", "cargo_capacity","Vehicle", img2)
 // obtener_multiples(url3, mostrarPersonajes_funciongeneral,"name", "consumables","Vehicle", img2 )
-obtener_multiples(url3, mostrarPersonajes_funciongeneral,"name", "cost_in_credits" ,"Vehicle", img2)
+//obtener_multiples(url3, mostrarPersonajes_funciongeneral,"name", "cost_in_credits" ,"Vehicle", img4)
 // obtener_multiples(url3, mostrarPersonajes_funciongeneral,"name", "created" ,"Vehicle", img2)
 // obtener_multiples(url3, mostrarPersonajes_funciongeneral,"name", "crew" )
 // obtener_multiples(url3, mostrarPersonajes_funciongeneral,"name", "length","Vehicle", img2 )

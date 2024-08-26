@@ -1,11 +1,4 @@
 @font-face {
-    font-family: "Star-Wars";
-    src: url('./Fuentes/Starjedi.ttf');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
     font-family: Matterhorn;
     font-weight: 400;
     font-style: normal;
@@ -33,7 +26,7 @@ body {
 }
 
 .Home h1 {
-    font-family: "Star-Wars";
+    font-family: "Matterhorn";
     font-size: clamp(1.75rem, 3.5rem, 7rem);
     text-shadow: 0px 0px 20px white;
     
@@ -237,217 +230,214 @@ a {
     display: block;
 }
 
-.Inicio {
+
+
+.Contenedor{
     width: 100vw;
-    height: 100vh;
-    text-align: center;
-    background-color: #000;
-}
-
-.gif {
-    position: absolute;
-    top: 150vh;
-    left: 0;
-    width: 10vw;
-}
-
-.Inicio img {
-    width: 100dvw;
+    min-height: 100vh;
     height: auto;
-}
-
-.opc {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
-}
-
-
-#Planetas {
-    width: 100vw;
-    height: 100vh;
+    color: white;
     text-align: center;
-    display: grid;
-    grid-template-areas:
-        'head head'
-        'img sec';
-    place-items: center;
-
-}
-
-.titulo9 {
-    grid-area: head;
-    font-size: 7.5em;
-    margin: 0px;
-    text-shadow: 0px 0px 10px rgb(255, 255, 255);
-    color: #fdfdfd9f;
-    position: sticky;
-    top: 80px;
-
-
-}
-
-#imagencontenedor {
-    width: 40vw;
-    grid-area: img;
-    object-fit: cover;
-}
-
-.ContainerPadre {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
-    gap: 1vw;
-    flex-wrap: wrap;
-    width: 100%;
-    overflow-y: scroll;
-    height: 80%;
-    scrollbar-width: none;
-    grid-area: sec;
-    font-size: 4em;
-    margin: 5vw;
-
-}
-
-
-.texto_incio {
-    margin: 0.5vw;
-    font-size: 2.8em;
-    color: rgb(255, 255, 255);
-    margin-bottom: 0.8vw;
-    text-align: center;
-    padding: 5vw;
-    width: 80%;
-}
-
-.Container {
-    display: flex;
-    flex-direction: column;
-    width: 95%;
-    justify-content: center;
-    align-items: center;
-}
-
-.titulo2 {
-    text-align: center;
-    font-size: 2.6rem;
-    text-shadow: 0px 0px 3px rgb(255, 255, 255);
-    margin: 1vw;
-    color: #FFD700;
-
-
-}
-
-.label {
-    margin: 0.5vw;
-    font-size: 2.2rem;
-    color: rgb(255, 255, 255);
-    margin-bottom: 0.8vw;
-    text-align: center;
-}
-
-
-
-.label_titulo {
-    font-size: 2.5rem;
-    text-shadow: 0px 0px 5px rgb(255, 255, 255);
-    margin: 0%;
-    color: #00CCFF;
-    font-weight: 500;
-}
-
-
-
-
-p {
-    flex-grow: 1;
-}
-
-.ContainerUnidad {
-    display: flex;
-    background-color: #3f2c7533;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 20vw;
-
-    border-radius: 5%;
-    margin: 1.5vw;
-    border: solid, 0.3vw, #00CCFF;
-    box-shadow: 0px 0px 20px rgb(255, 255, 255);
-}
-
-.ContainerPadre img {
-    width: 5vw;
-    margin: 0.5vw;
+    margin: 0;
+    font-family: "Matterhorn";
+    position: relative;
     background-color: black;
-    border-radius: 100%;
+}
+.titulo{
+    color: yellow;
+    font-size: 3rem;
+    margin: 0;
+    margin-top: 1rem;
+    text-shadow: 0px 0px 10px rgb(255, 255, 255);
 }
 
-.Aperttura {
+.imagencontenedor, .ImagenStarwars{
+    width: 80%;
+    border-radius: 20px;
+    box-shadow: 0px 0px 30px 5px darkblue;
+}
+
+.ContenedorImagen h2 {
+    color: yellow;
+    position: absolute;
+    top: 50vw;
+    left: 4vw;
+}
+.Contenedor p{
+    font-size: clamp(1rem, 1.2rem, 1.5rem);
+    margin: 0.5rem 1.2rem;
+    padding: 0.2rem;
+}
+.ImagenStarwars{
+    position: relative;
+    left: -8vw;
+    margin-left: 1rem;
+    margin-bottom: 5vw;
+}
+.frase{
+    color: yellow;
+    position: absolute;
+    bottom: 42%;
+    right: 2%;
+    font-size: clamp(1rem, 1.5rem, 1.7rem);
+    text-align: right;
+}
+
+.ContainerPadre{
     display: flex;
     flex-direction: column;
-    width: 90%;
+    align-items:center;
+    width: 100vw;
+    border-radius: 20px;
+    position: relative;
 }
-
-.vehiculo {
+.ContenedorPrincipal{
     display: flex;
-    flex-direction: row;
-    width: 90%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+.ContenedorPadre{
+    display: flex;
+    align-items:center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 100vw;
+    height: 50vh;
+    overflow-y: scroll;
+    scrollbar-width: none;
+    gap: 2rem 0.5rem;
+    border-radius: 20px;
+    margin: 10vw 0vw;
+    position: relative;
+    gap: 1rem;
+    font-family: "Matterhorn";
+}
+.ContainerUnidad{
+    min-height: 40vw;
+    width: 80vw;
+    max-width: 100%;
+    height: auto;
+    min-height: 40vh;
+    padding: 0.5rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color:#3f2c7533;
+    border-radius: 5%;
+    border: solid, 0.3vw,#00CCFF;
+    box-shadow: 0px 0px 10px rgb(255, 255, 255);
+    overflow: hidden;
+    margin: 5vw;
+}
+.label_titulo {
+    color: yellow;
+}
+.titulo2{
+    color: red;
 }
 
-.text_vehiculos {
-    width: 100%;
+.imagencontenedor {
+    background-color: white;
 }
 
-.Peliculas {
-    width: 45vw;
+.logop{
+    width: 2rem;
 }
 
-@media (max-width: 1000px) {
+@media screen and (min-width: 1000px) and  (min-width: 768px) {
 
-    .ContainerUnidad {
-        min-width: 80vw;
+    .Contenedor{
+        margin-top: 5vw;
+        display: flex;
+        width: 100vw;
+        height: fit-content;
+    }
+    .titulo{
+        position: absolute;
+        top: 0;
+        left: 50%;
+    }
+    .ContenedorImagen{
+        display: flex;
+        position: relative;
+        width: 100%;
+    }
+    
+    .ContenedorImagen img{
+        width: 70%;
+        height:fit-content;
+        object-fit: cover;
+        top: 0;
+        left:0;
+        margin-left: 1vw;
+    }
+    .ContenedorImagen h2{
+        position: absolute;
+        top: 38%;
+        left: -5%;
+        width: 100%;
+    }
+    .ContenedorImagen p{
+        position: absolute;
+        left: 80%;
+        top: 20%;
+        width: 50vw;
+        padding: 10px;
+    }
+    .ContainerPadre{
+        display: flex;
+        position: relative;
+    }
+    .ContainerPadre img {
+        width: 70%;
+        height:fit-content;
+        top: 50%;
+        left: 5%;
+    }
+    .ContainerPadre p{
+        position: absolute;
+        bottom: 20%;
+        left: -100%;
+        width: 50vw;
+        padding: 10px;
+    }
+    .frase{
+        position: absolute;
+        top: 45%;
+        right: 45%;
+        width: 100%;
+    }
+    .imagencontenedor1{
+        width: 30vw;
+        height: fit-content;
+    }
+    .ContenedorPrincipal{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+    }
+    .ContenedorPadre{
+        width: 70vw;
+        background-color: #00CCFF;
         margin: 5vw;
-        padding-bottom: 2vw;
     }
-
-    .label {
-        width: 90%;
-        font-size: 5.5vw;
-    }
-
-    .Container {
-
-        width: 90%;
-
-    }
-
-    .titulo {
-        font-size: 8vw;
-    }
-
-    .img {
-        width: 20vw;
-        margin: 0.5vw;
-    }
-
-    .label_titulo {
-        font-size: 6vw;
-    }
-
-
-    .texto_incio {
-        margin: 0.5vw;
-        font-size: 6.5vw;
-        color: rgb(255, 255, 255);
-        margin-bottom: 0.8vw;
+    .ContainerUnidad{
+        width: 15vw;
+        height: 10rem;
+        margin: 10px;
+        display: flex;
+        flex-direction: column;
         text-align: center;
-        padding: 5vw;
-        width: 80%;
+        align-items: center;
+    }
+    .titulo1{
+        position: absolute;
+        top: 0;
 
     }
-
 }
