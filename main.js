@@ -48,12 +48,12 @@ function mayus(llave1) {
 
 
 
-let img1 = "https://i.pinimg.com/originals/9b/f6/9e/9bf69e82d471f2f94dc8223043730d06.gif";
-let img2 ="https://media.tenor.com/uT-0_4jiNKYAAAAj/krrsantan-wookie.gif"
-let img3 = "https://i.pinimg.com/originals/f1/e6/73/f1e673dd44795b6b50bf3941093932b2.gif";
-let img4 = "https://i.pinimg.com/originals/81/35/24/8135244303e3859332cd4124ef727a2c.gif";
-let img5 = "https://cdn.pixabay.com/animation/2023/06/30/16/16/16-16-16-137_512.gif";
-let img6 = "https://www.komar.de/media/catalog/product/cache/13/image/9df78eab33525d08d6e5fb8d27136e95/0/2/026-dvd2_star_wars_poster_classic_1_web.jpg";
+let imgcharacters = "https://i.pinimg.com/originals/9b/f6/9e/9bf69e82d471f2f94dc8223043730d06.gif";
+let imgspecies ="https://media.tenor.com/uT-0_4jiNKYAAAAj/krrsantan-wookie.gif"
+let imgstarships = "https://i.pinimg.com/originals/f1/e6/73/f1e673dd44795b6b50bf3941093932b2.gif";
+let imgvehicles = "https://i.pinimg.com/originals/81/35/24/8135244303e3859332cd4124ef727a2c.gif";
+let imgplanets = "https://cdn.pixabay.com/animation/2023/06/30/16/16/16-16-16-137_512.gif";
+let imgfilms = "https://www.komar.de/media/catalog/product/cache/13/image/9df78eab33525d08d6e5fb8d27136e95/0/2/026-dvd2_star_wars_poster_classic_1_web.jpg";
 
 let Remplazo_titulo = document.createElement("h2");
 let contenedor_padre = document.getElementById("Contenedor");
@@ -61,15 +61,30 @@ let contenedor_padre = document.getElementById("Contenedor");
 function mostrarPersonajes_funciongeneral(data, llave1, llave2, titulo, img) {
   Remplazo_titulo.classList.add("titulo1");
   Remplazo_titulo.textContent = titulo;
-  contenedor_padre.replaceChild(Remplazo_titulo, contenedor_padre.querySelector("h1"));
-  let contendor_img = document.getElementById("ContenedorImagen");
+
+  const tituloAntiguo = contenedor_padre.querySelector("h1");
+  if (tituloAntiguo) {
+    contenedor_padre.replaceChild(Remplazo_titulo, tituloAntiguo);
+  } else {
+    contenedor_padre.appendChild(Remplazo_titulo);
+  }
+
+  
+  let contenedor_imagen = document.getElementById("ContenedorImagen");
+  if (contenedor_imagen) {
+    contenedor_imagen.remove();
+  }
+
+  // Crear y agregar la nueva imagen directamente a ContainerAll
   const imagen = document.createElement("img");
   imagen.setAttribute("src", img);
-  contendor_img.replaceWith(imagen);
+  imagen.classList.add("imagencontenedor1");
+
   contenedor_padre.classList.replace("Contenedor", "ContenedorPrincipal")
   ContainerAll.classList.replace("ContainerPadre", "ContenedorPadre")
   imagen.classList.add("imagencontenedor1");
   ContainerAll.innerHTML = "";
+  ContainerAll.appendChild(imagen);
   data.forEach((element) => {
     const div = document.createElement("div");
     div.innerHTML = `
@@ -85,10 +100,67 @@ function mostrarPersonajes_funciongeneral(data, llave1, llave2, titulo, img) {
     ContainerAll.append(div);
   });
 }
+document.addEventListener("DOMContentLoaded", () => {
+  // Seleccionar todos los enlaces del submenú
+  const submenuLinks = document.querySelectorAll(".submenu__link");
+
+  // Agregar un manejador de eventos a cada enlace del submenú
+  submenuLinks.forEach(link => {
+    link.addEventListener("click", async (event) => {
+      event.preventDefault(); // Prevenir el comportamiento por defecto del enlace
+      const category = link.closest(".header__item").querySelector("a").dataset.category;
+      const key = link.dataset.key;
+      let url;
+      let img;
+      let titulo;
+
+      // Determinar qué URL, imagen y título usar según la categoría
+      switch (category) {
+        case "characters":
+          url = "https://swapi.py4e.com/api/people/?page=";
+          img = imgcharacters;
+          titulo = "Characters";
+          await obtener_multiples(url, mostrarPersonajes_funciongeneral, "name", key, titulo, img);
+          break;
+        case "species":
+          url = "https://swapi.py4e.com/api/species/?page=";
+          img = imgspecies;
+          titulo = "Species";
+          await obtener_multiples(url, mostrarPersonajes_funciongeneral, "name", key, titulo, img);
+          break;
+        case "starships":
+          url = "https://swapi.py4e.com/api/starships/?page=";
+          img = imgstarships;
+          titulo = "Starships";
+          await obtener_multiples(url, mostrarPersonajes_funciongeneral, "name", key, titulo, img);
+          break;
+        case "vehicles":
+          url = "https://swapi.py4e.com/api/vehicles/?page=";
+          img = imgvehicles;
+          titulo = "Vehicles";
+          await obtener_multiples(url, mostrarPersonajes_funciongeneral, "name", key, titulo, img);
+          break;
+        case "planets":
+          url = "https://swapi.py4e.com/api/planets/?page=";
+          img = imgplanets;
+          titulo = "Planets";
+          await obtener_multiples(url, mostrarPersonajes_funciongeneral, "name", key, titulo, img);
+          break;
+        case "films":
+          url = "https://swapi.py4e.com/api/films/";
+          img = imgfilms;
+          titulo = "Films";
+          await obtener(url, mostrarPersonajes_funciongeneral, "title", key, titulo, img);
+          break;
+      }
+    });
+  });
+});
+
 
 //Lammados hechos con URL X8
 
-obtener_multiples(url,mostrarPersonajes_funciongeneral,"name","height","Characters",img1);
+//obtener_multiples(url,mostrarPersonajes_funciongeneral,"name","height","Characters",img1);
 // obtener_multiples(url, mostrarPersonajes_funciongeneral,"name", "birth_year" ,"Characters")
 //obtener_multiples(url, mostrarPersonajes_funciongeneral,"name", "eye_color" ,"Characters", img1)
 // obtener_multiples(url, mostrarPersonajes_funciongeneral,"name", "hair_color" ,"Characters")
