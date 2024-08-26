@@ -6,53 +6,92 @@
 }
 
 @font-face {
-    font-family: "DINN";
-    src: url('./Fuentes/DINNextW1G-Regular.otf');
-    font-weight: normal;
+    font-family: Matterhorn;
+    font-weight: 400;
     font-style: normal;
+    font-display: swap;
+    src: url("https://static-mh.content.disney.io/matterhorn/assets/matterhorn/sans/matterhorn-regular-b6b4f5da5330.eot?#iefix") format("embedded-opentype"), url("https://static-mh.content.disney.io/matterhorn/assets/matterhorn/sans/matterhorn-regular-eed88f0756d6.woff") format("woff"), url("https://static-mh.content.disney.io/matterhorn/assets/matterhorn/sans/matterhorn-regular-07d90ea407f5.ttf") format("truetype"), url("https://static-mh.content.disney.io/matterhorn/assets/matterhorn/sans/matterhorn-regular-bc3e22ea86d1.svg#Matterhorn") format("svg")
 }
 
 body {
     margin: 0;
-    background-color: #000; 
+    background-color: #000;
     width: 100vw;
     height: 100vh;
-    font-family: "Star-Wars";
     color: white;
-    background-image: url(https://www.shutterstock.com/shutterstock/videos/22001752/thumb/1.jpg?ip=x480);
     overflow-x: hidden;
+    scroll-behavior: smooth;
 }
 
-.Home{
-    width: 100vw;
+.Home {
+    width: 100%;
     height: 100vh;
     display: flex;
     flex-direction: column;
-    text-align: center;
     align-items: center;
-    justify-content:flex-start;
-    margin: auto;
-
+    justify-content: center;
 }
 
-.Home h1{
+.Home h1 {
     font-family: "Star-Wars";
+    font-size: clamp(1.75rem, 3.5rem, 7rem);
+    text-shadow: 0px 0px 20px white;
+    
+}
+
+.button-link {
+    background-image: url(https://www.ambientum.com/wp-content/uploads/2024/04/space-4984262_1280-696x464.jpg);
+    background-size: cover;
+    color: #fff;
+    border: none;
+    position: relative;
+    font-family: "Matterhorn";
+    height: 60px;
+    font-size: 1.6rem;
+    padding: 0 2em;
+    transition: 800ms ease all;
+    line-height: 60px;
+    box-shadow: 0px 0px 25px 15px #003366;
+    letter-spacing: 0.5px;
+    border-radius: 20px;
+
+}
+
+.button-link:hover {
+    background-image: url(https://imagenes.muyinteresante.com/files/article_social_75/uploads/2023/10/26/653a70fe92542.jpeg);
+    box-shadow: 0px 0px 30px 15px #4A148C;
+    scale: 1.1;
     color: yellow;
-    font-size: 10vw;
-}
-
-.Home button{
-    background-color: red;
-    width: 10rem;
-    height: 5rem;
-    font-family:"Star-Wars" ;
-    color: white;
-    font-size: large;
-    border-radius: 5rem;
+    letter-spacing: 10px;
 
 }
 
-header{
+.button-link:before,
+.button-link:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 2px;
+    width: 0;
+    background: purple;
+    transition: 1s ease all;
+}
+
+.button-link:after {
+    right: inherit;
+    top: inherit;
+    left: 0;
+    bottom: 0;
+}
+
+.button-link:hover:before,
+.button-link:hover:after {
+    width: 100%;
+    transition: 1s ease all;
+}
+
+header {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -65,25 +104,25 @@ header{
     top: 0;
     z-index: 99;
     font-family: "DINN";
-    background-image:URL("https://lumiere-a.akamaihd.net/v1/images/sw-skeleton-crew-tentpole-desktop_ceb6c251.jpeg?region=0,0,1600,600&width=1536") ;
+    background-image: URL("https://lumiere-a.akamaihd.net/v1/images/sw-skeleton-crew-tentpole-desktop_ceb6c251.jpeg?region=0,0,1600,600&width=1536");
     background-position: bottom right;
     background-size: cover;
-    
-    
-
 }
-.header__nav{
+
+.header__nav {
     background-color: rgba(0, 0, 0, 0.801);
     width: 100%;
     margin: 0px;
 }
-#img_fixed{
-   
+
+#img_fixed {
+
     position: sticky;
     top: 100px;
-    
+
 }
-.header__list{
+
+.header__list {
     display: flex;
     list-style: none;
     text-transform: uppercase;
@@ -92,44 +131,44 @@ header{
     margin: 0px;
 }
 
-.header__item{
-    margin:1rem;
+.header__item {
+    margin: 1rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     position: relative;
 }
 
-.header__link{
-    text-decoration: none; 
-    color: inherit; 
-    display: flex; 
-    text-align: center; 
-    flex-direction: column; 
-    align-items: center; 
+.header__link {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
     transition-duration: 0.5s;
 }
 
-a{
-    text-decoration: none; 
+a {
+    text-decoration: none;
     color: inherit;
 }
 
-.header__link:hover{
+.header__link:hover {
     color: yellow;
     transition-duration: 0.3s;
     filter: sepia(1) saturate(10) brightness(1.2);
 }
 
-.Logos{
+.Logos {
     width: 4rem;
     height: auto;
 }
 
 .submenu {
-    display: none; 
+    display: none;
     position: absolute;
-    top: 100%; 
+    top: 100%;
     left: 0;
     background-color: #000000;
     padding: 0.5rem;
@@ -157,25 +196,26 @@ a{
     display: block;
 }
 
-.Inicio{
+.Inicio {
     width: 100vw;
     height: 100vh;
     text-align: center;
     background-color: #000;
 }
 
-.gif{
+.gif {
     position: absolute;
     top: 150vh;
     left: 0;
     width: 10vw;
 }
-.Inicio img{
+
+.Inicio img {
     width: 100dvw;
     height: auto;
 }
 
-.opc{
+.opc {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -183,53 +223,55 @@ a{
 }
 
 
-#Planetas{
+#Planetas {
     width: 100vw;
     height: 100vh;
     text-align: center;
     display: grid;
-    grid-template-areas: 
-    'head head' 
-    'img sec';
+    grid-template-areas:
+        'head head'
+        'img sec';
     place-items: center;
-   
+
 }
-.titulo9{
-    grid-area:head;
+
+.titulo9 {
+    grid-area: head;
     font-size: 7.5em;
     margin: 0px;
     text-shadow: 0px 0px 10px rgb(255, 255, 255);
     color: #fdfdfd9f;
     position: sticky;
     top: 80px;
-    
-    
+
+
 }
+
 #imagencontenedor {
     width: 40vw;
     grid-area: img;
     object-fit: cover;
 }
 
-.ContainerPadre{
+.ContainerPadre {
     display: flex;
     flex-direction: row;
-    align-items:center;
+    align-items: center;
     justify-content: space-around;
-    gap:1vw;
+    gap: 1vw;
     flex-wrap: wrap;
     width: 100%;
     overflow-y: scroll;
     height: 80%;
     scrollbar-width: none;
-    grid-area: sec;   
+    grid-area: sec;
     font-size: 4em;
     margin: 5vw;
 
 }
 
 
-.texto_incio{
+.texto_incio {
     margin: 0.5vw;
     font-size: 2.8em;
     color: rgb(255, 255, 255);
@@ -238,23 +280,26 @@ a{
     padding: 5vw;
     width: 80%;
 }
-.Container{
+
+.Container {
     display: flex;
     flex-direction: column;
     width: 95%;
     justify-content: center;
-    align-items: center; 
+    align-items: center;
 }
-.titulo2{
-text-align: center;
-font-size: 2.6rem;
-text-shadow: 0px 0px 3px rgb(255, 255, 255);
-margin: 1vw;
-color: #FFD700;
+
+.titulo2 {
+    text-align: center;
+    font-size: 2.6rem;
+    text-shadow: 0px 0px 3px rgb(255, 255, 255);
+    margin: 1vw;
+    color: #FFD700;
 
 
 }
-.label{
+
+.label {
     margin: 0.5vw;
     font-size: 2.2rem;
     color: rgb(255, 255, 255);
@@ -264,7 +309,7 @@ color: #FFD700;
 
 
 
-.label_titulo{
+.label_titulo {
     font-size: 2.5rem;
     text-shadow: 0px 0px 5px rgb(255, 255, 255);
     margin: 0%;
@@ -277,72 +322,83 @@ color: #FFD700;
 
 p {
     flex-grow: 1;
-  }
-
-.ContainerUnidad{
-    display: flex;
-   background-color:#3f2c7533;
-   flex-direction: column;
-   justify-content: center;
-   align-items: center;
-   width: 20vw;
-   
-   border-radius: 5%;
-   margin: 1.5vw;
-   border: solid, 0.3vw,#00CCFF;
-   box-shadow: 0px 0px 20px rgb(255, 255, 255);
 }
-.ContainerPadre img{
+
+.ContainerUnidad {
+    display: flex;
+    background-color: #3f2c7533;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 20vw;
+
+    border-radius: 5%;
+    margin: 1.5vw;
+    border: solid, 0.3vw, #00CCFF;
+    box-shadow: 0px 0px 20px rgb(255, 255, 255);
+}
+
+.ContainerPadre img {
     width: 5vw;
     margin: 0.5vw;
     background-color: black;
     border-radius: 100%;
 }
-.Aperttura{
+
+.Aperttura {
     display: flex;
     flex-direction: column;
     width: 90%;
 }
-.vehiculo{
+
+.vehiculo {
     display: flex;
     flex-direction: row;
     width: 90%;
 }
-.text_vehiculos{
+
+.text_vehiculos {
     width: 100%;
 }
-.Peliculas{
+
+.Peliculas {
     width: 45vw;
 }
+
 @media (max-width: 1000px) {
 
-    .ContainerUnidad{
+    .ContainerUnidad {
         min-width: 80vw;
         margin: 5vw;
         padding-bottom: 2vw;
     }
-    .label{
+
+    .label {
         width: 90%;
         font-size: 5.5vw;
     }
-    .Container{
-       
+
+    .Container {
+
         width: 90%;
-        
+
     }
-    .titulo{
+
+    .titulo {
         font-size: 8vw;
     }
-    .img{
+
+    .img {
         width: 20vw;
         margin: 0.5vw;
     }
-    .label_titulo{
+
+    .label_titulo {
         font-size: 6vw;
     }
 
-    
-    .texto_incio{
+
+    .texto_incio {
         margin: 0.5vw;
         font-size: 6.5vw;
         color: rgb(255, 255, 255);
@@ -350,9 +406,7 @@ p {
         text-align: center;
         padding: 5vw;
         width: 80%;
-          
-        }
 
     }
 
-  
+}
