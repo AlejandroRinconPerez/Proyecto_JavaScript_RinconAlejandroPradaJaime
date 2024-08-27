@@ -423,17 +423,22 @@ a {
     }
     .ContenedorPadre{
         width: 70vw;
-        background-color: #00CCFF;
+        background-color: #000000;
         margin: 5vw;
     }
     .ContainerUnidad{
-        width: 15vw;
-        height: 10rem;
+        width: 20vw;
+        height: auto;
         margin: 10px;
         display: flex;
         flex-direction: column;
         text-align: center;
         align-items: center;
+    }
+    .img_character{
+      margin:auto;
+      width: 12rem; 
+      margin-top: 1rem;
     }
     .titulo1{
         position: absolute;

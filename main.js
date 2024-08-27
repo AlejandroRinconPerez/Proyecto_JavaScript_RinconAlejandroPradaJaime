@@ -19,9 +19,10 @@ async function obtener(url, callback, llave1, llave2, titulo, img) {
     console.error("Error al obtener los personajes:", error);
   }
 }
-async function obtener_multiples(url, callback, llave1, llave2, titulo, img) {
+async function obtener_multiples(url, callback, llave1, llave2, titulo, img,  num) {
+  let contador = 0
   let todosArrays = [];
-  for (let i = 1; i < 10; i++) {
+  for (let i = 1; i < num; i++) {
     try {
       const response = await fetch(url + i);
       if (!response.ok) {
@@ -30,6 +31,7 @@ async function obtener_multiples(url, callback, llave1, llave2, titulo, img) {
       const data = await response.json();
 
       if (data.results && data.results.length > 0) {
+        contador =contador + 1
         todosArrays = todosArrays.concat(data.results);
       } else {
         console.log(`No hay datos en la página ${i}`);
@@ -39,6 +41,7 @@ async function obtener_multiples(url, callback, llave1, llave2, titulo, img) {
     }
   }
   console.log(todosArrays);
+  console.log(contador)
   callback(todosArrays, llave1, llave2, titulo, img);
 }
 function mayus(llave1) {
@@ -89,8 +92,8 @@ function mostrarPersonajes_funciongeneral(data, llave1, llave2, titulo, img) {
     const div = document.createElement("div");
     div.innerHTML = `
             <div class="ContainerUnidad">
+            <img src="./Multimedia/Personajes.png" alt="Logo" class="logop">
                  <h2 class="titulo2">${element[llave1]}</h2>
-                 <img src="./Multimedia/Personajes.png" alt="Logo" class="logop">
                 <div class="Container">
                     <p class="label_titulo">${mayus(llave2)}</p>
                     <p class="label">${element[llave2] || "N/A"}</p>
@@ -98,6 +101,62 @@ function mostrarPersonajes_funciongeneral(data, llave1, llave2, titulo, img) {
             </div>
         `;
     ContainerAll.append(div);
+  });
+}
+function mostrarPersonajes_funciongeneral_foto(data, llave1, llave2, titulo, img) {
+  Remplazo_titulo.classList.add("titulo1");
+  Remplazo_titulo.textContent = titulo;
+
+  const tituloAntiguo = contenedor_padre.querySelector("h1");
+  if (tituloAntiguo) {
+    contenedor_padre.replaceChild(Remplazo_titulo, tituloAntiguo);
+  } else {
+    contenedor_padre.appendChild(Remplazo_titulo);
+  }
+
+  
+  let contenedor_imagen = document.getElementById("ContenedorImagen");
+  if (contenedor_imagen) {
+    contenedor_imagen.remove();
+  }
+
+  // Crear y agregar la nueva imagen directamente a ContainerAll
+  const imagen = document.createElement("img");
+  imagen.setAttribute("src", img);
+  imagen.classList.add("imagencontenedor1");
+
+  contenedor_padre.classList.replace("Contenedor", "ContenedorPrincipal")
+  ContainerAll.classList.replace("ContainerPadre", "ContenedorPadre")
+  imagen.classList.add("imagencontenedor1");
+  ContainerAll.innerHTML = "";
+  ContainerAll.appendChild(imagen);
+   i =1
+  data.forEach((element) => {
+    const div = document.createElement("div");
+    div.innerHTML = `
+            <div class="ContainerUnidad">
+            <img src="https://starwars-visualguide.com/assets/img/characters/${i}.jpg" class= "img_character">
+            
+                 <h2 class="titulo2">${element[llave1]}</h2>
+                <div class="Container">
+                    <p class="label_titulo">${mayus(llave2)}</p>
+                    <p class="label">${element[llave2] || "N/A"}</p>
+                </div>
+            </div>
+        `;
+    ContainerAll.append(div);
+
+if (i <16){
+
+     i =i +1
+    }else if(i ==16){
+      i= i +2
+      // i =18
+    }else{
+      i= i +1
+
+    }
+
   });
 }
 document.addEventListener("DOMContentLoaded", () => {
@@ -120,31 +179,31 @@ document.addEventListener("DOMContentLoaded", () => {
           url = "https://swapi.py4e.com/api/people/?page=";
           img = imgcharacters;
           titulo = "Characters";
-          await obtener_multiples(url, mostrarPersonajes_funciongeneral, "name", key, titulo, img);
+          await obtener_multiples(url,  mostrarPersonajes_funciongeneral_foto, "name", key, titulo, img ,10);
           break;
         case "species":
           url = "https://swapi.py4e.com/api/species/?page=";
           img = imgspecies;
           titulo = "Species";
-          await obtener_multiples(url, mostrarPersonajes_funciongeneral, "name", key, titulo, img);
+          await obtener_multiples(url, mostrarPersonajes_funciongeneral, "name", key, titulo, img, 5);
           break;
         case "starships":
           url = "https://swapi.py4e.com/api/starships/?page=";
           img = imgstarships;
           titulo = "Starships";
-          await obtener_multiples(url, mostrarPersonajes_funciongeneral, "name", key, titulo, img);
+          await obtener_multiples(url, mostrarPersonajes_funciongeneral, "name", key, titulo, img,5);
           break;
         case "vehicles":
           url = "https://swapi.py4e.com/api/vehicles/?page=";
           img = imgvehicles;
           titulo = "Vehicles";
-          await obtener_multiples(url, mostrarPersonajes_funciongeneral, "name", key, titulo, img);
+          await obtener_multiples(url, mostrarPersonajes_funciongeneral, "name", key, titulo, img, 5);
           break;
         case "planets":
           url = "https://swapi.py4e.com/api/planets/?page=";
           img = imgplanets;
           titulo = "Planets";
-          await obtener_multiples(url, mostrarPersonajes_funciongeneral, "name", key, titulo, img);
+          await obtener_multiples(url, mostrarPersonajes_funciongeneral, "name", key, titulo, img, 8);
           break;
         case "films":
           url = "https://swapi.py4e.com/api/films/";
