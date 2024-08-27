@@ -19,7 +19,7 @@ async function obtener(url, callback, llave1, llave2, titulo, img) {
     console.error("Error al obtener los personajes:", error);
   }
 }
-async function obtener_multiples(url, callback, llave1, llave2, titulo, img,  num) {
+async function obtener_multiples(url, callback, llave1, llave2, titulo, img,  num ,Tipo) {
   let contador = 0
   let todosArrays = [];
   for (let i = 1; i < num; i++) {
@@ -56,7 +56,7 @@ let imgspecies ="https://media.tenor.com/uT-0_4jiNKYAAAAj/krrsantan-wookie.gif"
 let imgstarships = "https://i.pinimg.com/originals/f1/e6/73/f1e673dd44795b6b50bf3941093932b2.gif";
 let imgvehicles = "https://i.pinimg.com/originals/81/35/24/8135244303e3859332cd4124ef727a2c.gif";
 let imgplanets = "https://cdn.pixabay.com/animation/2023/06/30/16/16/16-16-16-137_512.gif";
-let imgfilms = "https://www.komar.de/media/catalog/product/cache/13/image/9df78eab33525d08d6e5fb8d27136e95/0/2/026-dvd2_star_wars_poster_classic_1_web.jpg";
+let imgfilms = "https://media1.tenor.com/m/S4QeM-pB0IoAAAAC/obi-wan-kenobi-anakin-skywalker.gif"
 
 let Remplazo_titulo = document.createElement("h2");
 let contenedor_padre = document.getElementById("Contenedor");
@@ -103,7 +103,7 @@ function mostrarPersonajes_funciongeneral(data, llave1, llave2, titulo, img) {
     ContainerAll.append(div);
   });
 }
-function mostrarPersonajes_funciongeneral_foto(data, llave1, llave2, titulo, img) {
+function mostrarPersonajes_funciongeneral_foto(data, llave1, llave2, titulo, img,Tipo) {
   Remplazo_titulo.classList.add("titulo1");
   Remplazo_titulo.textContent = titulo;
 
@@ -132,11 +132,25 @@ function mostrarPersonajes_funciongeneral_foto(data, llave1, llave2, titulo, img
   ContainerAll.appendChild(imagen);
    i =1
   data.forEach((element) => {
+    let imagenSrc = "";
+    switch (titulo) {
+      case "Characters":
+        imagenSrc = `https://starwars-visualguide.com/assets/img/characters/${i}.jpg`;
+        break;
+      case "Species":
+        imagenSrc = `https://starwars-visualguide.com/assets/img/species/${i}.jpg`;
+        break;
+      case "Films":
+        imagenSrc = `https://starwars-visualguide.com/assets/img/films/${i}.jpg`;
+
+        break;
+      default:
+        imagenSrc = img; 
+    }
     const div = document.createElement("div");
     div.innerHTML = `
             <div class="ContainerUnidad">
-            <img src="https://starwars-visualguide.com/assets/img/characters/${i}.jpg" class= "img_character">
-            
+            <img src="${imagenSrc}" class= "img_character">
                  <h2 class="titulo2">${element[llave1]}</h2>
                 <div class="Container">
                     <p class="label_titulo">${mayus(llave2)}</p>
@@ -185,19 +199,20 @@ document.addEventListener("DOMContentLoaded", () => {
           url = "https://swapi.py4e.com/api/species/?page=";
           img = imgspecies;
           titulo = "Species";
-          await obtener_multiples(url, mostrarPersonajes_funciongeneral, "name", key, titulo, img, 5);
+          await obtener_multiples(url, mostrarPersonajes_funciongeneral_foto, "name", key, titulo, img, 5);
           break;
         case "starships":
           url = "https://swapi.py4e.com/api/starships/?page=";
           img = imgstarships;
           titulo = "Starships";
+          Tipo = "species";
           await obtener_multiples(url, mostrarPersonajes_funciongeneral, "name", key, titulo, img,5);
           break;
         case "vehicles":
           url = "https://swapi.py4e.com/api/vehicles/?page=";
           img = imgvehicles;
           titulo = "Vehicles";
-          await obtener_multiples(url, mostrarPersonajes_funciongeneral, "name", key, titulo, img, 5);
+          await obtener_multiples(url,mostrarPersonajes_funciongeneral, "name", key, titulo, img, 5);
           break;
         case "planets":
           url = "https://swapi.py4e.com/api/planets/?page=";
@@ -209,7 +224,7 @@ document.addEventListener("DOMContentLoaded", () => {
           url = "https://swapi.py4e.com/api/films/";
           img = imgfilms;
           titulo = "Films";
-          await obtener(url, mostrarPersonajes_funciongeneral, "title", key, titulo, img);
+          await obtener(url, mostrarPersonajes_funciongeneral_foto, "title", key, titulo, img);
           break;
       }
     });
