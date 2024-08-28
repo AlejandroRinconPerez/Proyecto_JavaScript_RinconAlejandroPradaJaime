@@ -92,6 +92,10 @@ function mostrarPersonajes_funciongeneral(data, llave1, llave2, titulo, img) {
     contenedor_imagen.remove();
   }
 
+   const imagenAntigua = contenedor_padre.querySelector("img");
+  if (imagenAntigua) {
+    imagenAntigua.remove();
+  }
   const imagen = document.createElement("img");
   imagen.setAttribute("src", img);
   imagen.classList.add("imagencontenedor1");
@@ -124,25 +128,30 @@ function mostrarPersonajes_funciongeneral_foto(data, llave1, llave2, titulo, img
   if (tituloAntiguo) {
     contenedor_padre.replaceChild(Remplazo_titulo, tituloAntiguo);
   } else {
-    contenedor_padre.appendChild(Remplazo_titulo);
+    contenedor_padre.insertBefore(Remplazo_titulo, contenedor_padre.firstChild);
   }
 
-  
-  let contenedor_imagen = document.getElementById("ContenedorImagen");
-  if (contenedor_imagen) {
-    contenedor_imagen.remove();
-  }
+const contenedorImagen = document.getElementById("ContenedorImagen");
+if (contenedorImagen) {
+  contenedorImagen.remove();
+}
 
-  // Crear y agregar la nueva imagen directamente a ContainerAll
-  const imagen = document.createElement("img");
-  imagen.setAttribute("src", img);
-  imagen.classList.add("imagencontenedor1");
+const nuevoContenedorImagen = document.createElement("div");
+nuevoContenedorImagen.id = "ContenedorImagen";
+nuevoContenedorImagen.classList.add("Contenedor-Imagen");
+
+const nuevaImagen = document.createElement("img");
+nuevaImagen.setAttribute("src", img);
+nuevaImagen.classList.add("imagen-contenedor");
+
+nuevoContenedorImagen.appendChild(nuevaImagen);
+
+contenedor_padre.insertBefore(nuevoContenedorImagen, ContainerAll);
 
   contenedor_padre.classList.replace("Contenedor", "ContenedorPrincipal")
   ContainerAll.classList.replace("ContainerPadre", "ContenedorPadre")
-  imagen.classList.add("imagencontenedor1");
+
   ContainerAll.innerHTML = "";
-  ContainerAll.appendChild(imagen);
    i =1
   data.forEach((element) => {
     let imagenSrc = "";
