@@ -166,13 +166,18 @@ contenedor_padre.insertBefore(nuevoContenedorImagen, ContainerAll);
         imagenSrc = `https://starwars-visualguide.com/assets/img/films/${i}.jpg`;
         break;
       case "Starships": 
-        imagenSrc = `https://static0.gamerantimages.com/wordpress/wp-content/uploads/2024/01/star-wars-largest-starships-ranked.jpg`;
+        imagenSrc = `./Multimedia/naves.webp`;
         break
       case "Planets":
-        imagenSrc = `https://qph.cf2.quoracdn.net/main-qimg-3bf24a3f768cfa80261311670fe1d358-pjlq`;
-        break
+        if (i === 1 || i > 19) {
+          imagenSrc = './Multimedia/Planetas.webp';
+        }else {
+            imagenSrc = `https://starwars-visualguide.com/assets/img/planets/${i}.jpg`;
+        }
+             
+          break
       case "Vehicles":
-        imagenSrc = `https://pm1.aminoapps.com/6030/be2b6f575b4e807eebf41fb45e96ca090729ea73_00.jpg`;
+        imagenSrc = `./Multimedia/Vehicles.webp`;
         break
   
       default:
@@ -232,20 +237,20 @@ document.addEventListener("DOMContentLoaded", () => {
           break;
         case "starships":
           url = "https://swapi.py4e.com/api/starships/?page=";
-          img = imgstarships;
+          img = "https://icons.veryicon.com/png/Movie%20%26%20TV/Star%20Wars%20Vehicles%201/Death%20Star%202nd.png";
           titulo = "Starships";
           Tipo = "species";
           await obtener_multiples(url, mostrarPersonajes_funciongeneral_foto, "name", key, titulo, img,5);
           break;
         case "vehicles":
           url = "https://swapi.py4e.com/api/vehicles/?page=";
-          img = imgvehicles;
+          img = "./Multimedia/Vehicles.webp";
           titulo = "Vehicles";
           await obtener_multiples(url,mostrarPersonajes_funciongeneral_foto, "name", key, titulo, img, 5);
           break;
         case "planets":
           url = "https://swapi.py4e.com/api/planets/?page=";
-          img = imgplanets;
+          img = "./Multimedia/Planetas.webp";
           titulo = "Planets";
           await obtener_multiples(url, mostrarPersonajes_funciongeneral_foto, "name", key, titulo, img, 8);
           break;
