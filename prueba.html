@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+
+// Función para obtener datos de una URL
+async function fetchData(url) {
+    try {
+        let response = await fetch(url);
+        let data = await response.json();
+        return data;
+    } catch (error) {
+        console.error(`Error fetching data from ${url}:`, error);
+    }
+}
+
+// Función para obtener detalles de los enlaces
+async function fetchDetailsFromUrls(urls) {
+    try {
+        let uniqueUrls = [...new Set(urls)];
+        let fetchPromises = uniqueUrls.map(url => fetchData(url));
+        let results = await Promise.all(fetchPromises);
+        return results;
+    } catch (error) {
+        console.error('Error fetching details from URLs:', error);
+    }
+}
+
+// Función para reemplazar URLs en los datos con detalles
+function replaceUrlsWithDetails(data, urlDetails) {
+    for (let key in data) {
+        if (Array.isArray(data[key])) {
+            data[key] = data[key].map(url => urlDetails.find(detail => detail.url === url) || url);
+        } else if (typeof data[key] === 'object' && data[key] !== null) {
+            replaceUrlsWithDetails(data[key], urlDetails);
+        }
+    }
+}
+
+// Función para obtener detalles de un personaje específico
+async function getPersonDetails(personId) {
+    let personUrl = `https://swapi.py4e.com/api/people/${personId}/`;
+    let personData = await fetchData(personUrl);
+
+    // Obtener detalles relacionados
+    let filmDetails = await fetchDetailsFromUrls(personData.films);
+    let vehicleDetails = await fetchDetailsFromUrls(personData.vehicles);
+    let speciesDetails = await fetchDetailsFromUrls(personData.species);
+    let starshipDetails = await fetchDetailsFromUrls(personData.starships);
+
+    // Reemplazar URLs en los datos con detalles
+    replaceUrlsWithDetails(personData, [...filmDetails, ...vehicleDetails, ...speciesDetails, ...starshipDetails]);
+
+    return personData;
+}
+
+// Función para obtener detalles de un planeta específico
+async function getPlanetDetails(planetId) {
+    let planetUrl = `https://swapi.py4e.com/api/planets/${planetId}/`;
+    let planetData = await fetchData(planetUrl);
+
+    // Obtener detalles relacionados
+    let residentDetails = await fetchDetailsFromUrls(planetData.residents);
+
+    // Reemplazar URLs en los datos con detalles
+    replaceUrlsWithDetails(planetData, [...residentDetails]);
+
+    return planetData;
+}
+
+// Función para obtener detalles de una especie específica
+async function getSpeciesDetails(speciesId) {
+    let speciesUrl = `https://swapi.py4e.com/api/species/${speciesId}/`;
+    let speciesData = await fetchData(speciesUrl);
+
+    // Obtener detalles relacionados
+    let peopleDetails = await fetchDetailsFromUrls(speciesData.people);
+
+    // Reemplazar URLs en los datos con detalles
+    replaceUrlsWithDetails(speciesData, [...peopleDetails]);
+
+    return speciesData;
+}
+
+// Función para obtener detalles de una película específica
+async function getFilmDetails(filmId) {
+    let filmUrl = `https://swapi.py4e.com/api/films/${filmId}/`;
+    let filmData = await fetchData(filmUrl);
+
+    // Obtener detalles relacionados
+    let characterDetails = await fetchDetailsFromUrls(filmData.characters);
+
+    // Reemplazar URLs en los datos con detalles
+    replaceUrlsWithDetails(filmData, [...characterDetails]);
+
+    return filmData;
+}
+
+// Función para obtener detalles de un vehículo específico
+async function getVehicleDetails(vehicleId) {
+    let vehicleUrl = `https://swapi.py4e.com/api/vehicles/${vehicleId}/`;
+    let vehicleData = await fetchData(vehicleUrl);
+
+    // Obtener detalles relacionados
+    let pilotDetails = await fetchDetailsFromUrls(vehicleData.pilots);
+
+    // Reemplazar URLs en los datos con detalles
+    replaceUrlsWithDetails(vehicleData, [...pilotDetails]);
+
+    return vehicleData;
+}
+
+// Función para obtener detalles de una nave estelar específica
+async function getStarshipDetails(starshipId) {
+    let starshipUrl = `https://swapi.py4e.com/api/starships/${starshipId}/`;
+    let starshipData = await fetchData(starshipUrl);
+
+    // Obtener detalles relacionados
+    let pilotDetails = await fetchDetailsFromUrls(starshipData.pilots);
+
+    // Reemplazar URLs en los datos con detalles
+    replaceUrlsWithDetails(starshipData, [...pilotDetails]);
+
+    return starshipData;
+}
+
+// Función principal para obtener y procesar todos los datos
+async function fetchAllData() {
+    try {
+        // URLs principales
+        let peopleData = await fetchData("https://swapi.py4e.com/api/people/?page=1");
+        let filmsData = await fetchData("https://swapi.py4e.com/api/films/");
+        let vehiclesData = await fetchData("https://swapi.py4e.com/api/vehicles/?page=1");
+        let speciesData = await fetchData("https://swapi.py4e.com/api/species/?page=1");
+        let planetsData = await fetchData("https://swapi.py4e.com/api/planets/?page=1");
+        let starshipsData = await fetchData("https://swapi.py4e.com/api/starships/?page=1");
+
+        // Extraer URLs de enlaces
+        let filmUrls = peopleData.results.flatMap(person => person.films);
+        let vehicleUrls = peopleData.results.flatMap(person => person.vehicles);
+        let speciesUrls = peopleData.results.flatMap(person => person.species);
+        let starshipUrls = peopleData.results.flatMap(person => person.starships);
+
+        let allFilmUrls = filmsData.results.flatMap(film => film.characters);
+        let allVehicleUrls = vehiclesData.results.flatMap(vehicle => vehicle.pilots);
+        let allSpeciesUrls = speciesData.results.flatMap(specie => specie.people);
+        let allStarshipUrls = starshipsData.results.flatMap(starship => starship.pilots);
+
+        // Obtener detalles de los enlaces
+        let filmDetails = await fetchDetailsFromUrls([...filmUrls, ...allFilmUrls]);
+        let vehicleDetails = await fetchDetailsFromUrls([...vehicleUrls, ...allVehicleUrls]);
+        let speciesDetails = await fetchDetailsFromUrls([...speciesUrls, ...allSpeciesUrls]);
+        let starshipDetails = await fetchDetailsFromUrls([...starshipUrls, ...allStarshipUrls]);
+
+        // Reemplazar URLs en los datos con detalles
+        replaceUrlsWithDetails(peopleData.results, [...filmDetails, ...vehicleDetails, ...speciesDetails, ...starshipDetails]);
+        replaceUrlsWithDetails(filmsData.results, [...peopleData.results]);
+        replaceUrlsWithDetails(vehiclesData.results, [...peopleData.results]);
+        replaceUrlsWithDetails(speciesData.results, [...peopleData.results]);
+        replaceUrlsWithDetails(starshipsData.results, [...peopleData.results]);
+
+        // Mostrar los datos
+        console.log("People Data:", peopleData);
+        console.log("Films Data:", filmsData);
+        console.log("Vehicles Data:", vehiclesData);
+        console.log("Species Data:", speciesData);
+        console.log("Planets Data:", planetsData);
+        console.log("Starships Data:", starshipsData);
+
+    } catch (error) {
+        console.error('Error fetching all data:', error);
+    }
+}
+
+// Función para manejar la visualización de detalles en la consola
+async function displayDetails(type, id) {
+    let data;
+    switch (type) {
+        case 'person':
+            data = await getPersonDetails(id);
+            break;
+        case 'planet':
+            data = await getPlanetDetails(id);
+            break;
+        case 'species':
+            data = await getSpeciesDetails(id);
+            break;
+        case 'film':
+            data = await getFilmDetails(id);
+            break;
+        case 'vehicle':
+            data = await getVehicleDetails(id);
+            break;
+        case 'starship':
+            data = await getStarshipDetails(id);
+            break;
+        default:
+            console.error('Unknown type:', type);
+            return;
+    }
+    console.log(`${type.charAt(0).toUpperCase() + type.slice(1)} Data:`, data);
+}
+
+// Llamar a la función principal para obtener y procesar todos los datos
+fetchAllData();
+
+// Ejemplo de uso para obtener detalles de un personaje con ID 1 (Luke Skywalker)
+displayDetails('film', 1);
+
+    </script>
+</body>
+</html>

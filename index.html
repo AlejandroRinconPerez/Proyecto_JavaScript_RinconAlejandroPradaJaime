@@ -18,12 +18,22 @@
 
   <main>
     <header>
+      <input type="checkbox" id="menu-toggle" class="menu-toggle" />
 
+      <label for="menu-toggle" class="menu-icon">
+        <img
+          src="https://static-mh.content.disney.io/matterhorn/assets/starwars/navigation/SW_Burger_White-09a4d3d1e252.svg"
+          alt="abrir" class="open">
+        <img
+          src="https://static-mh.content.disney.io/matterhorn/assets/starwars/navigation/SW_Burger_Close_White-a5617cc36d88.svg"
+          alt="Close" class="close">
+      </label>
       <nav class="header__nav">
+
         <ul class="header__list">
           <li class="header__item">
             <a href="#Personajes" class="header__link" data-category="characters">
-              <img src="./Multimedia/Personajes.png"  alt="Personajes" class="Logos" />
+              <img src="./Multimedia/Personajes.png" alt="Personajes" class="Logos" />
               Characters</a>
             <ul class="submenu">
               <li class="submenu__item">
@@ -86,7 +96,7 @@
                 <a href="#" data-key="hyperdrive_rating" class="submenu__link">Hyperdrive rating</a>
               </li>
               <li class="submenu__item">
-                <a href="#"  data-key="consumables" class="submenu__link">Consumables</a>
+                <a href="#" data-key="consumables" class="submenu__link">Consumables</a>
               </li>
             </ul>
           </li>
@@ -114,7 +124,7 @@
                 <a href="#" data-key="model" class="submenu__link">Model</a>
               </li>
               <li class="submenu__item">
-                <a href="#" data-key="vehicle_class"  class="submenu__link">Vehicle class</a>
+                <a href="#" data-key="vehicle_class" class="submenu__link">Vehicle class</a>
               </li>
             </ul>
           </li>
@@ -167,13 +177,13 @@
           </li>
         </ul>
       </nav>
-
+      <img
+        src="https://lumiere-a.akamaihd.net/v1/images/sw_logo_stacked_2x-52b4f6d33087_7ef430af.png?region=0,0,586,254"
+        alt="logo starwars" class="Logo_starwars">
     </header>
 
     <section class="Inicio" id="Inicio">
-        <img
-          src="https://lumiere-a.akamaihd.net/v1/images/sw-skeleton-crew-tentpole-desktop_ceb6c251.jpeg?region=0,0,1600,600&width=1536"
-          alt="Skeleton Crew" class="Skeleton">
+      <img src="https://lumiere-a.akamaihd.net/v1/images/image_8c985523.jpeg" alt="Skeleton Crew" class="Skeleton">
       <div class="Carrusel">
         <img src="https://img.europapress.es/fotoweb/fotonoticia_20150620132813_690.jpg" alt="Luke Skywalker"
           class="Carrusel-item">
@@ -198,20 +208,25 @@
     <section class="Contenedor" id="Contenedor">
       <h1 class="titulo" id="titulo">STAR WARS</h1>
       <div class="ContenedorImagen" id="ContenedorImagen">
-          <img src="https://e.rpp-noticias.io/large/2023/04/26/102810_1420506.jpg" alt="Star Wars"
-          id="imagencontenedor" class="imagencontenedor">
-          <h2> MAY THE FORCE BE WITH YOU</h2>
-          <p>Star Wars is an American epic space opera media franchise created by George Lucas, which began with the eponymous 1977 film and quickly became a worldwide pop culture phenomenon. </p>
+        <img src="https://e.rpp-noticias.io/large/2023/04/26/102810_1420506.jpg" alt="Star Wars" id="imagencontenedor"
+          class="imagencontenedor">
+        <h2> MAY THE FORCE BE WITH YOU</h2>
+        <p class="texto">Star Wars is an American epic space opera media franchise created by George Lucas, which began
+          with the eponymous 1977 film and quickly became a worldwide pop culture phenomenon. </p>
       </div>
       <div class="ContainerPadre" id="lista">
-          <p>The franchise has been expanded into various films and other media, including television series, video games, novels, comic books, theme park attractions, and themed areas, comprising an all-encompassing fictional universe.</p>
-          <img src="https://media.revistagq.com/photos/604b2f499fc97c95e82c1c14/master/pass/2101913.jpg" alt="" class="ImagenStarwars">
-          <h2 class="frase">KEEP CALM AND USE THE FORCE</h2>
+        <p class="texto">The franchise has been expanded into various films and other media, including television
+          series, video games, novels, comic books, theme park attractions, and themed areas, comprising an
+          all-encompassing fictional universe.</p>
+        <img src="https://media.revistagq.com/photos/604b2f499fc97c95e82c1c14/master/pass/2101913.jpg" alt=""
+          class="ImagenStarwars">
+        <h2 class="frase">KEEP CALM AND USE THE FORCE</h2>
       </div>
-  </section>
+    </section>
   </main>
 
 
   <script src="./main.js"></script>
 </body>
+
 </html>

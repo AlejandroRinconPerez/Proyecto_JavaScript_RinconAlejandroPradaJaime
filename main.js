@@ -1,3 +1,17 @@
+const menu = document.querySelector(".header__list");
+const abrir = document.querySelector(".open");
+const cerrar = document.querySelector(".close");
+
+
+abrir.addEventListener("click",()=>{
+  menu.classList.add("visible")
+});
+
+cerrar.addEventListener("click",()=>{
+  menu.classList.remove("visible")
+});
+
+
 const ContainerAll = document.querySelector("#lista");
 let url = "https://swapi.py4e.com/api/people/?page=";
 let url2 = "https://swapi.py4e.com/api/films/";
@@ -78,7 +92,6 @@ function mostrarPersonajes_funciongeneral(data, llave1, llave2, titulo, img) {
     contenedor_imagen.remove();
   }
 
-  // Crear y agregar la nueva imagen directamente a ContainerAll
   const imagen = document.createElement("img");
   imagen.setAttribute("src", img);
   imagen.classList.add("imagencontenedor1");
@@ -142,8 +155,17 @@ function mostrarPersonajes_funciongeneral_foto(data, llave1, llave2, titulo, img
         break;
       case "Films":
         imagenSrc = `https://starwars-visualguide.com/assets/img/films/${i}.jpg`;
-
         break;
+      case "Starships": 
+        imagenSrc = `https://static0.gamerantimages.com/wordpress/wp-content/uploads/2024/01/star-wars-largest-starships-ranked.jpg`;
+        break
+      case "Planets":
+        imagenSrc = `https://qph.cf2.quoracdn.net/main-qimg-3bf24a3f768cfa80261311670fe1d358-pjlq`;
+        break
+      case "Vehicles":
+        imagenSrc = `https://pm1.aminoapps.com/6030/be2b6f575b4e807eebf41fb45e96ca090729ea73_00.jpg`;
+        break
+  
       default:
         imagenSrc = img; 
     }
@@ -174,13 +196,11 @@ if (i <16){
   });
 }
 document.addEventListener("DOMContentLoaded", () => {
-  // Seleccionar todos los enlaces del submenú
   const submenuLinks = document.querySelectorAll(".submenu__link");
 
-  // Agregar un manejador de eventos a cada enlace del submenú
   submenuLinks.forEach(link => {
     link.addEventListener("click", async (event) => {
-      event.preventDefault(); // Prevenir el comportamiento por defecto del enlace
+      event.preventDefault();
       const category = link.closest(".header__item").querySelector("a").dataset.category;
       const key = link.dataset.key;
       let url;
@@ -206,19 +226,19 @@ document.addEventListener("DOMContentLoaded", () => {
           img = imgstarships;
           titulo = "Starships";
           Tipo = "species";
-          await obtener_multiples(url, mostrarPersonajes_funciongeneral, "name", key, titulo, img,5);
+          await obtener_multiples(url, mostrarPersonajes_funciongeneral_foto, "name", key, titulo, img,5);
           break;
         case "vehicles":
           url = "https://swapi.py4e.com/api/vehicles/?page=";
           img = imgvehicles;
           titulo = "Vehicles";
-          await obtener_multiples(url,mostrarPersonajes_funciongeneral, "name", key, titulo, img, 5);
+          await obtener_multiples(url,mostrarPersonajes_funciongeneral_foto, "name", key, titulo, img, 5);
           break;
         case "planets":
           url = "https://swapi.py4e.com/api/planets/?page=";
           img = imgplanets;
           titulo = "Planets";
-          await obtener_multiples(url, mostrarPersonajes_funciongeneral, "name", key, titulo, img, 8);
+          await obtener_multiples(url, mostrarPersonajes_funciongeneral_foto, "name", key, titulo, img, 8);
           break;
         case "films":
           url = "https://swapi.py4e.com/api/films/";
