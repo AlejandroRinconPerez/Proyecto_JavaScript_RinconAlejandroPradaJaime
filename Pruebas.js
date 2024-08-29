@@ -40,9 +40,9 @@ async function obtener_multiples(url, callback, llave1, llave2, titulo, num ) {
            }else{
              j= j +1
            }
-           console.log(element.hair_color)
+           
          });
-         console.log(todosArrays);
+         
     // console.log(contador)
     callback(todosArrays, llave1, llave2, titulo);
        }
@@ -595,7 +595,7 @@ function FiltropeloPruebaswhite(data, llave1, llave2) {
     let Variable = data.filter((element) => {
         return element[llave2].toLowerCase() === "white";
     });
-    console.log(Variable);
+    
 
     Variable.forEach((element) => {
         const div = document.createElement("div");
@@ -622,7 +622,7 @@ function FiltropeloPruebasnone(data, llave1, llave2) {
     let Variable = data.filter((element) => {
         return element[llave2].toLowerCase() === "none";
     });
-    console.log(Variable);
+    
 
     Variable.forEach((element) => {
         const div = document.createElement("div");
@@ -649,7 +649,7 @@ function FiltropeloPruebasblack(data, llave1, llave2) {
     let Variable = data.filter((element) => {
         return element[llave2].toLowerCase() === "black";
     });
-    console.log(Variable);
+    
 
     Variable.forEach((element) => {
         const div = document.createElement("div");
@@ -675,7 +675,7 @@ function FiltropeloPruebasna(data, llave1, llave2) {
     let Variable = data.filter((element) => {
         return element[llave2].toLowerCase() === "n/a";
     });
-    console.log(Variable);
+    
 
     Variable.forEach((element) => {
         const div = document.createElement("div");
@@ -728,7 +728,7 @@ function Filtrogendermale(data, llave1, llave2) {
     let Variable = data.filter((element) => {
         return element[llave2].toLowerCase() === "male";
     });
-    console.log(Variable);
+    
 
     Variable.forEach((element) => {
         const div = document.createElement("div");
@@ -756,7 +756,7 @@ function Filtrogenderfemale(data, llave1, llave2) {
     let Variable = data.filter((element) => {
         return element[llave2].toLowerCase() === "female";
     });
-    console.log(Variable);
+    
 
     Variable.forEach((element) => {
         const div = document.createElement("div");
@@ -782,7 +782,7 @@ function Filtrogenderna(data, llave1, llave2) {
     let Variable = data.filter((element) => {
         return element[llave2].toLowerCase() === "n/a";
     });
-    console.log(Variable);
+    
 
     Variable.forEach((element) => {
         const div = document.createElement("div");
@@ -807,7 +807,7 @@ botonComprar28.addEventListener('click', function() {
 
 
 //-----------------------------------------------------------------------------------------------------
-async function obtener_multiplesRango(url, callback, llave1, llave2,  num, Rango1, Rango2) {
+async function obtener_multiplesRango(url, callback, llave1, llave2,  num, Rango1) {
     let contador = 0
     let todosArrays = [];
     
@@ -841,9 +841,10 @@ async function obtener_multiplesRango(url, callback, llave1, llave2,  num, Rango
              j= j +1
            }
          });
-         console.log(todosArrays);
+         
+
     // console.log(contador)
-    callback(todosArrays, llave1, llave2, Rango1, Rango2);
+    callback(todosArrays, llave1, llave2, Rango1);
        }
     
 //-----------------------------------------------------------------------------------------------------
@@ -1184,3 +1185,67 @@ botonComprar80.addEventListener('click', function() {
 });
 
 
+const botonComprar82 = document.querySelector('#surface_water10');
+botonComprar82.addEventListener('click', function() {
+    obtener_multiplesRango(url5, FiltroRangoGeneralPartiendodeplanetas, "name", "surface_water", 8, 10);
+});
+
+const botonComprar83 = document.querySelector('#surface_water30');
+botonComprar83.addEventListener('click', function() {
+    obtener_multiplesRango(url5, FiltroRangoGeneralPartiendodeplanetas, "name", "surface_water", 8, 30);
+});
+
+const botonComprar84 = document.querySelector('#surface_water50');
+botonComprar84.addEventListener('click', function() {
+    obtener_multiplesRango(url5, FiltroRangoGeneralPartiendodeplanetas, "name", "surface_water", 8, 50);
+});
+const botonComprar86 = document.querySelector('#surface_water40');
+botonComprar86.addEventListener('click', function() {
+    obtener_multiplesRango(url5, FiltroRangoGeneralPartiendodeplanetas, "name", "surface_water", 8, 40);
+});
+
+
+const botonComprar87 = document.querySelector('#classification_average_10');
+botonComprar87.addEventListener('click', function() {
+    obtener_multiplesRango(url4, FiltroRangoGeneralPartiendodeplanetas, "name", "average_lifespan", 5, 10);
+});
+
+const botonComprar88 = document.querySelector('#classification_average_20');
+botonComprar88.addEventListener('click', function() {
+    obtener_multiplesRango(url4, FiltroRangoGeneralPartiendodeplanetas, "name", "average_lifespan", 5, 20);
+});
+
+const botonComprar89 = document.querySelector('#classification_average_50');
+botonComprar89.addEventListener('click', function() {
+    obtener_multiplesRango(url4, FiltroRangoGeneralPartiendodeplanetas, "name", "average_lifespan", 5, 50);
+});
+
+const botonComprar90 = document.querySelector('#classification_average_100');
+botonComprar90.addEventListener('click', function() {
+    obtener_multiplesRango(url4, FiltroRangoGeneralPartiendodeplanetas, "name", "average_lifespan", 5, 100);
+});
+
+const botonComprar92 = document.querySelector('#average_height10');
+botonComprar92.addEventListener('click', function() {
+    obtener_multiplesRango(url4, FiltroRangoGeneralPartiendodeplanetas, "name", "average_height", 5, 10);
+});
+
+const botonComprar93 = document.querySelector('#average_height50');
+botonComprar93.addEventListener('click', function() {
+    obtener_multiplesRango(url4, FiltroRangoGeneralPartiendodeplanetas, "name", "average_height", 5, 50);
+});
+
+const botonComprar94 = document.querySelector('#average_height100');
+botonComprar94.addEventListener('click', function() {
+    obtener_multiplesRango(url4, FiltroRangoGeneralPartiendodeplanetas, "name", "average_height", 5, 100);
+});
+
+const botonComprar95 = document.querySelector('#average_height150');
+botonComprar95.addEventListener('click', function() {
+    obtener_multiplesRango(url4, FiltroRangoGeneralPartiendodeplanetas, "name", "average_height", 5, 150);
+});
+
+const botonComprar96 = document.querySelector('#average_height200');
+botonComprar96.addEventListener('click', function() {
+    obtener_multiplesRango(url4, FiltroRangoGeneralPartiendodeplanetas, "name", "average_height", 5, 200);
+});
