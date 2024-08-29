@@ -1,0 +1,81 @@
+async function obtener_multiplesRango(url, callback, llave1, llave2,  num, Rango1, Rango2) {
+    let contador = 0
+    let todosArrays = [];
+    
+    for (let i = 1; i < num; i++) {
+      try {
+        const response = await fetch(url + i);
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const data = await response.json();
+  
+        if (data.results && data.results.length > 0) {
+          contador =contador + 1
+          todosArrays = todosArrays.concat(data.results);
+          
+        } else {
+          console.log(`No hay datos en la página ${i}`);
+        }
+      } catch (error) {
+        console.error("Error al obtener los personajes:", error);
+      }
+    }
+    let j = 1
+    todosArrays.forEach(element => {
+        element.id = j;
+        if (j <16){
+            j =j +1
+           }else if(j ==16){
+             j= j +2
+           }else{
+             j= j +1
+           }
+         });
+         console.log(todosArrays);
+    // console.log(contador)
+    callback(todosArrays, llave1, llave2, Rango1, Rango2);
+       }
+    
+//-----------------------------------------------------------------------------------------------------
+function FiltroRangoGeneralPartiendode__0(data, llave1, llave2, Rango1 ) {
+    container.innerHTML = ""
+   let Variable = []
+   Variable = data.filter((element) => {
+       return element[llave2] <= Rango1  
+   })
+   console.log(Variable)
+   Variable = Variable.sort((a,b )=> a.height-b.height)
+   container.innerHTML = ""
+   Variable.forEach((element) => {
+     const div = document.createElement("div");
+     div.innerHTML = `
+             <div class="ContainerUnidad">
+              <img src="https://starwars-visualguide.com/assets/img/characters/${element.id}.jpg">
+                  <h2 class="titulo2">${element[llave1]}</h2>
+                 <div class="Container">
+                     <p class="label_titulo">${mayus(llave2)}</p>
+                     <p class="label">${element[llave2] || "N/A"} cm</p>
+                 </div>
+             </div>
+         `;
+         container.append(div);
+   });
+ }
+
+
+//  obtener_multiplesRango(url, FiltroRangoGeneralPartiendode__0, "name", "height",  10, 70)
+//  obtener_multiplesRango(url, FiltroRangoGeneralPartiendode__0, "name", "height",  10, 90)
+//  obtener_multiplesRango(url, FiltroRangoGeneralPartiendode__0, "name", "height",  10, 100)
+//  obtener_multiplesRango(url, FiltroRangoGeneralPartiendode__0, "name", "height",  10, 120)
+//  obtener_multiplesRango(url, FiltroRangoGeneralPartiendode__0, "name", "height",  10, 180)
+//  obtener_multiplesRango(url, FiltroRangoGeneralPartiendode__0, "name", "height",  10, 200)
+//  obtener_multiplesRango(url, FiltroRangoGeneralPartiendode__0, "name", "height",  10, 220)
+//  obtener_multiplesRango(url, FiltroRangoGeneralPartiendode__0, "name", "height",  10, 850)
+
+
+
+ const botonComprar29 = document.querySelector('#genderna');
+botonComprar29.addEventListener('click', function() {
+    obtener_multiplesRango(url, FiltroRangoGeneralPartiendode__0, "name", "height",  10, 70)
+});

@@ -26,6 +26,52 @@ body {
     overflow-x: hidden;
     box-sizing: border-box;
 }
+.contenedor{
+    width: 100%;
+    display: flex;
+    gap: 5vw;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    overflow-y: auto; /* Habilita el scroll vertical si hay overflow */
+    height: 100vh; /* Asegura que la barra lateral ocupe toda la altura de la vista */
+    
+
+}
+img{
+    width: 25vw;
+}
+.Pruebascss{
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+}
+.botones{
+    width: 20vw; /* Ajusta el ancho de la barra lateral según sea necesario */
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 1rem; /* Espacio entre botones */
+    padding: 1rem;
+    box-sizing: border-box;
+    overflow-y: auto; /* Habilita el scroll vertical si hay overflow */
+    height: 100vh; /* Asegura que la barra lateral ocupe toda la altura de la vista */
+}
+.btn-filtrar {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.btn-filtrar:hover {
+    background-color: #e5f501;
+}
+    
+
+
 
 .Home {
     width: 100%;
