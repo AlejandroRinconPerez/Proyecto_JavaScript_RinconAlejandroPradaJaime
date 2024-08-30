@@ -26,52 +26,6 @@ body {
     overflow-x: hidden;
     box-sizing: border-box;
 }
-.contenedor{
-    width: 100%;
-    display: flex;
-    gap: 5vw;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    overflow-y: auto; /* Habilita el scroll vertical si hay overflow */
-    height: 100vh; /* Asegura que la barra lateral ocupe toda la altura de la vista */
-    
-
-}
-img{
-    width: 25vw;
-}
-.Pruebascss{
-    display: flex;
-    flex-direction: row;
-    height: 100vh;
-}
-.botones{
-    width: 20vw; /* Ajusta el ancho de la barra lateral según sea necesario */
-    display: flex;
-    flex-direction: column-reverse;
-    gap: 1rem; /* Espacio entre botones */
-    padding: 1rem;
-    box-sizing: border-box;
-    overflow-y: auto; /* Habilita el scroll vertical si hay overflow */
-    height: 100vh; /* Asegura que la barra lateral ocupe toda la altura de la vista */
-}
-.btn-filtrar {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-.btn-filtrar:hover {
-    background-color: #e5f501;
-}
-    
-
-
 
 .Home {
     width: 100%;
@@ -90,9 +44,18 @@ img{
     font-family: "star-wars";
     font-size: clamp(1.75rem, 3.5rem, 7rem);
     text-shadow: 0px 0px 20px white;
+    margin: 0;
+    margin-bottom: 5vw;
+}
+.gif{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 8rem;
+    z-index: 100;
+    filter: contrast(120%);
 
 }
-
 .button-link {
     background-image: url(https://www.ambientum.com/wp-content/uploads/2024/04/space-4984262_1280-696x464.jpg);
     background-size: cover;
@@ -147,23 +110,18 @@ img{
 
 .Inicio {
     width: 100vw;
-    height: auto;
     background-color: #000;
-    color: white;
-    position: relative;
     margin: 0;
     padding: 0;
     overflow-x: hidden;
 }
 
-.Skeleton {
-    width: 100%;
-}
 
 .Carrusel {
-    width: 100%;
-    height: 10rem;
+    width: 100vw;
+    height: 20rem;
     display: flex;
+    margin: auto;
 }
 
 .Carrusel-item {
@@ -176,7 +134,7 @@ img{
 }
 
 .Carrusel-item:hover {
-    width: 10rem;
+    width: 15rem;
     opacity: 1;
     filter: contrast(120%);
 }
@@ -191,16 +149,31 @@ header {
     align-items: center;
     position: sticky;
     width: 100vw;
-    height: 50px;
+    height: 80px;
     top: 0;
     z-index: 1;
-    background-image: URL("https://lumiere-a.akamaihd.net/v1/images/sw-skeleton-crew-tentpole-desktop_ceb6c251.jpeg?region=0,0,1600,600&width=1536");
+    background-image: URL("https://lumiere-a.akamaihd.net/v1/images/scary-star-wars-planets-mustafar_article-feature_36ea058c.jpeg?region=0,0,1600,900");
     background-size: cover;
-    background-position: bottom center;
+    background-position: center;
+
+}
+
+header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("https://lumiere-a.akamaihd.net/v1/images/scary-star-wars-planets-mustafar_article-feature_36ea058c.jpeg?region=0,0,1600,900");
+    background-size: cover;
+    background-position: center;
+    filter: blur(2px); 
+    z-index: -1; 
 }
 
 .Logo_starwars {
-    width: 5rem;
+    width: 7rem;
 }
 
 .menu-icon {
@@ -215,7 +188,6 @@ header {
 
 .header__nav {
     position: relative;
-    width: 100vw;
 }
 
 .header__list .visible {
@@ -235,7 +207,7 @@ header {
     top: 30px;
     left: 0;
     width: 100%;
-    padding: 0;
+    padding: 40px;
     margin: 0;
 }
 
@@ -255,6 +227,52 @@ header {
     flex-direction: column;
     align-items: center;
     transition-duration: 0.5s;
+    position: relative;
+}
+
+.submenus {
+    list-style-type: none;
+    position: absolute;
+    top: 0;
+    /* Justo debajo del elemento padre */
+    left: 100%;
+    /* Alineado a la izquierda del elemento padre */
+    background-color: #000;
+    /* Color de fondo del submenú */
+    display: none;
+    /* Ocultar por defecto */
+    opacity: 0;
+    /* Ocultar por defecto */
+    visibility: hidden;
+    /* Ocultar por defecto */
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+    /* Transición suave */
+    padding: 10px;
+    border-radius: 4px;
+    z-index: 1000;
+    /* Asegura que el submenú esté por encima de otros elementos */
+}
+
+.submenu__item:hover .submenus {
+    display: block;
+    /* Mostrar el submenú al pasar el cursor */
+    opacity: 1;
+    /* Mostrar el submenú */
+    visibility: visible;
+    /* Mostrar el submenú */
+}
+
+.submenus_link {
+    width: 25rem;
+    padding: 10px;
+    color: #fff;
+    /* Color del texto */
+    transition: background-color 0.3s ease;
+}
+
+.submenus_link:hover {
+    background-color: #555;
+    /* Cambiar el color de fondo al pasar el cursor */
 }
 
 a {
@@ -329,19 +347,20 @@ a {
     text-align: center;
     font-family: "Matterhorn";
     position: relative;
-    background-color: black;
+    background-image: url(./Multimedia/Contenedor.webp);
+    background-size: cover;
+
 }
 
 .titulo {
-    color: yellow;
+    color: white;
     font-family: "star-wars";
     font-size: clamp(1.75rem, 3.5rem, 7rem);
     margin: 0;
     margin-top: 1rem;
 }
 
-.imagencontenedor,
-.ImagenStarwars {
+.imagencontenedor {
     width: clamp(75%, 80%, 85%);
     border-radius: 20px;
 }
@@ -361,56 +380,6 @@ a {
 
 }
 
-.ImagenStarwars {
-    position: relative;
-    left: -8vw;
-    margin-left: 1rem;
-    margin-bottom: 5vw;
-}
-
-.frase {
-    color: yellow;
-    position: absolute;
-    bottom: clamp(35vw, 43vw, 50vw);
-    left: clamp(7vw, 8vw, 10vw);
-    font-size: clamp(1rem, 1.4rem, 1.6rem);
-    text-align: right;
-}
-
-.ContainerPadre {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100vw;
-    border-radius: 20px;
-    position: relative;
-}
-
-.ContenedorPrincipal {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-}
-
-.ContenedorPadre {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    width: 90vw;
-    height: 50vh;
-    overflow-y: scroll;
-    scrollbar-width: none;
-    gap: 2rem 0.5rem;
-    border-radius: 20px;
-    margin: 10vw 0vw;
-    position: relative;
-    gap: 1rem;
-    font-family: "Matterhorn";
-}
-
 .ContainerUnidad {
     width: auto;
     height: auto;
@@ -419,16 +388,23 @@ a {
     flex-direction: column;
     text-align: center;
     align-items: center;
-    gap: 2rem;
-    padding: 0.5rem;
+    gap: 0.5rem;
+    padding: 1rem;
     flex-grow: 1;
     justify-content: center;
-    background-color: #3f2c7513;
     border-radius: 5%;
     border: solid, 0.3vw, #00CCFF;
-    box-shadow: 0px 0px 10px rgb(255, 255, 255);
+    box-shadow: 0px 0px 10px 5px rgba(255, 255, 255, 0.7);
     overflow: hidden;
-    margin: 5vw;
+    margin: 10vw;
+    background-image: url(./Multimedia/Contenedor.webp);
+    background-size: cover;
+}
+
+.ContainerUnidad img {
+    width: 80%;
+    border-radius: 20px;
+    object-fit: cover;
 }
 
 .label_titulo {
@@ -452,14 +428,6 @@ a {
     font-size: 1.7rem;
 }
 
-.imagen-contenedor {
-    width: 25rem;
-    border-radius: 20px;
-    margin: 0 10vw;
-
-}
-
-
 .label {
     font-size: 1.2rem;
     margin: 0px;
@@ -467,7 +435,37 @@ a {
 }
 
 
-@media screen and (min-width: 1000px) and (min-width: 768px) {
+footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url(./Multimedia/Fondo.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+}
+
+.redes {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 1rem;
+}
+
+.redes a {
+    margin: 0 10px;
+    color: white;
+    font-size: 30px;
+    transition: color 1s ease;
+}
+
+.redes a:hover {
+    color: yellow;
+}
+
+
+@media screen and (min-width: 700px) {
 
     .Home h1 {
         font-size: clamp(10rem, 15rem, 20rem);
@@ -508,66 +506,17 @@ a {
         transform: translateX(-50%);
     }
 
-    .Inicio {
-        width: 100vw;
-        margin: auto;
-        padding-top: 2.5vw;
-        padding-bottom: 2.5vw;
-        background-image: url(https://d2rdhxfof4qmbb.cloudfront.net/wp-content/uploads/20180319171854/iStock-480194313-1.jpg);
-        background-size: cover;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        filter: blur(0.2px);
-
-    }
-
-    .Inicio::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-image: inherit;
-        background-size: inherit;
-        background-position: inherit;
-        filter: blur(5px);
-        z-index: -1;
-    }
-
-    .Skeleton {
-        border-top-left-radius: 20px;
-        border-top-right-radius: 20px;
-        width: 80vw;
-        text-align: center;
-
-    }
-
     .Carrusel {
-        height: 20rem;
-        margin-bottom: 2vw;
-        width: 80vw;
-        margin: auto;
-        opacity: 1;
-
+        height: 30rem;
     }
-
-    .Carrusel-item {
-        opacity: .8;
-    }
-
-
 
     .Contenedor {
-        margin-top: 5vw;
         display: flex;
         width: 100vw;
         height: 100vh;
         height: fit-content;
-        background-image: url(./Multimedia/Contenedor.webp);
-        background-size: cover;
-
+        flex-wrap: wrap;
+        justify-content: center;
     }
 
     .titulo {
@@ -578,89 +527,27 @@ a {
     }
 
     .ContenedorImagen {
-        display: flex;
-        position: relative;
-        width: 100%;
+        width: 100vw;
+        text-align: center;
+        margin: auto;
+        margin-top: 6vw;
     }
 
     .ContenedorImagen img {
-        width: 70%;
+        width: 50%;
         height: fit-content;
         object-fit: cover;
-        top: 0;
-        left: 0;
-        margin-left: 1vw;
     }
 
     .ContenedorImagen h2 {
-        position: absolute;
-        top: 72%;
-        left: -5%;
+        position: static;
         width: 100%;
     }
 
     .ContenedorImagen p {
-        position: absolute;
-        left: 80%;
-        top: 20%;
-        width: 50vw;
-        padding: 10px;
-    }
-
-    .ContainerPadre {
-        display: flex;
-        position: relative;
-    }
-
-    .ContainerPadre img {
+        position: static;
+        margin: auto;
         width: 70%;
-        height: fit-content;
-        top: 50%;
-        left: 5%;
-    }
-
-    .ContainerPadre p {
-        position: absolute;
-        bottom: -20%;
-        left: -100%;
-        width: 50vw;
-        padding: 10px;
-    }
-
-    .frase {
-        position: absolute;
-        top: 40%;
-        left: -5%;
-        width: 100%;
-    }
-
-    .imagencontenedor1 {
-        width: 30vw;
-        height: fit-content;
-    }
-
-    .ContenedorPrincipal {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-        position: relative;
-        min-height: 100vh;
-        height: auto;
-        background-image: url(./Multimedia/Contenedor-2.webp);
-        background-size: cover;
-        background-repeat: no-repeat;
-
-    }
-
-    .ContenedorPadre {
-        width: 70vw;
-        height: 40vw;
-        background-color: transparent;
-        box-shadow: 0px 0px 20px white;
-        margin: 5vw;
-        padding-top: 2rem;
-
     }
 
     .ContainerUnidad {
@@ -671,17 +558,9 @@ a {
         flex-direction: column;
         text-align: center;
         align-items: center;
-        gap: 0.5rem;
-        margin-bottom: 01vw;
+        margin: 2vw;
     }
 
-    .img_character {
-        margin: auto;
-        width: 12rem;
-        margin-top: 1rem;
-        border-radius: 5%;
-        margin-bottom: 0px;
-    }
 
     .titulo1 {
         font-family: "star-wars";
@@ -689,26 +568,12 @@ a {
         position: absolute;
         letter-spacing: 5px;
         top: 0;
-
     }
-
-    .img_character {
-        width: 80%;
-        height: 300px;
-        object-fit: cover;
-        border-radius: 20px;
-    }
+    
 
     .titulo2 {
         color: white;
         font-size: 1.7rem;
     }
 
-    .imagen-contenedor {
-        width: 25rem;
-        display: none;
-        margin: auto;
-        border-radius: 20px;
-        margin-left: 2vw;
-    }
 }

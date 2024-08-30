@@ -8,12 +8,16 @@
   <link rel="stylesheet" href="./Estilos.css" />
   <link rel="icon"
     href="https://lumiere-a.akamaihd.net/v1/images/sw-favicon-acolyte_19659d3f.png?region=0%2C0%2C512%2C512" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
   <section class="Home">
     <h1>STAR WARS</h1>
     <a href="#Inicio" class="button-link">START</a>
+    <img src="https://i.gifer.com/origin/d1/d17fc7f864fdb8deae36bc3bf8cf6d05_w200.gif" alt="Gif" class="gif">
   </section>
 
   <main>
@@ -37,22 +41,68 @@
               Characters</a>
             <ul class="submenu">
               <li class="submenu__item">
-                <a href="#" data-key="height" class="submenu__link">Height</a>
+                <a data-key="height" class="submenu__link">Height</a>
+                <ul class="submenus">
+                  <li class="submenus_link" id="TodosAltura">All Heights</li>
+                  <li class="submenus_link" id="mayor70">Height greater than 70 cm</li>
+                  <li class="submenus_link" id="mayor90">Height greater than 90 cm</li>
+                  <li class="submenus_link" id="menor100">Height less than 100 cm</li>
+                  <li class="submenus_link" id="mayor100">Height greater than 100 cm</li>
+                  <li class="submenus_link" id="mayor120">Height greater than 120 cm</li>
+                  <li class="submenus_link" id="mayor180">Height greater than 180 cm</li>
+                  <li class="submenus_link" id="mayor200">Height greater than 200 cm</li>
+                  <li class="submenus_link" id="mayor220">Height greater than 220 cm</li>
+                </ul>
               </li>
               <li class="submenu__item">
-                <a href="#" data-key="birth_year" class="submenu__link">Birth</a>
+                <a href="#" data-key="birth_year" class="submenu__link">Eyes</a>
+                <ul class="submenus">
+                  <li class="submenus_link" id="TodosAltura">All Eye Colors</li>
+                  <li class="submenus_link" id="Azules">Blue Eyes</li>
+                  <li class="submenus_link" id="Amarillos">Yellow Eyes</li>
+                  <li class="submenus_link" id="Negros">Black Eyes</li>
+                </ul>
               </li>
               <li class="submenu__item">
-                <a href="#" data-key="eye_color" class="submenu__link">Eyes</a>
+                <a href="#" data-key="eye_color" class="submenu__link">Mass</a>
+                <ul class="submenus">
+                  <li class="submenus_link" id="TodosMasa">All Masses</li>
+                  <li class="submenus_link" id="masamenor70">Mass less than 70</li>
+                  <li class="submenus_link" id="masamayor70">Mass greater than 70</li>
+                </ul>
               </li>
               <li class="submenu__item">
-                <a href="#" data-key="hair_color" class="submenu__link">Hair</a>
+                <a href="#" data-key="hair_color" class="submenu__link">Skin Color</a>
+                <ul class="submenus">
+                  <li class="submenus_link" id="pieltodos">All Skin Colors</li>
+                  <li class="submenus_link" id="pielcolorfair">Fair Skin</li>
+                  <li class="submenus_link" id="pielcolorwhite">White Skin</li>
+                  <li class="submenus_link" id="pielcolorlight">Light Skin</li>
+                  <li class="submenus_link" id="pielcolorgreen">Green Skin</li>
+                  <li class="submenus_link" id="pielcolorpale">Pale Skin</li>
+                  <li class="submenus_link" id="pielcolorgrey">Grey Skin</li>
+                  <li class="submenus_link" id="pielcolordark">Dark Skin</li>
+                </ul>
               </li>
               <li class="submenu__item">
-                <a href="#" data-key="skin_color" class="submenu__link">Skin</a>
+                <a href="#" data-key="skin_color" class="submenu__link">Hair Color</a>
+                <ul class="submenus">
+                  <li class="submenus_link" id="PelocolorTodos">All Hair Colors</li>
+                  <li class="submenus_link" id="pelocolorbrown">Brown Hair</li>
+                  <li class="submenus_link" id="pelocolorwhite">White Hair</li>
+                  <li class="submenus_link" id="pelocolornone">No Hair</li>
+                  <li class="submenus_link" id="pelocolorblack">Black Hair</li>
+                  <li class="submenus_link" id="pelocolorna">Not Applicable Hair</li>
+                </ul>
               </li>
               <li class="submenu__item">
                 <a href="#" data-key="gender" class="submenu__link">Gender</a>
+                <ul class="submenus">
+                  <li class="submenus_link" id="gendertodos">All Genders</li>
+                  <li class="submenus_link" id="gendermale">Male Gender</li>
+                  <li class="submenus_link" id="genderfemale">Female Gender</li>
+                  <li class="submenus_link" id="genderna">Robot Gender</li>
+                </ul>
               </li>
             </ul>
           </li>
@@ -84,16 +134,38 @@
               Starships</a>
             <ul class="submenu">
               <li class="submenu__item">
-                <a href="#" data-key="model" class="submenu__link">Model</a>
+                <a href="#" data-key="model" class="submenu__link">Cargo Capacity</a>
+                <ul class="submenus">
+                  <li class="submenu_link" id="Cargocapacity1000">Cargo Capacity more than 1000</li>
+                  <li class="submenu_link" id="Cargocapacity10000">Cargo Capacity more than 10000</li>
+                  <li class="submenu_link" id="Cargocapacity50000">Cargo Capacity more than 50000</li>
+                  <li class="submenu_link" id="Cargocapacity100000">Cargo Capacity more than 100000</li>
+                </ul>
               </li>
               <li class="submenu__item">
-                <a href="#" data-key="starship_class" class="submenu__link">Starship class</a>
+                <a href="#" data-key="cost_in_credits" class="submenu__link">Cost in Credits</a>
+                <ul class="submenus">
+                  <li class="submenus_link" id="cost_in_credits1000">Cost in Credits more than 1000</li>
+                  <li class="submenus_link" id="cost_in_credits5000">Cost in Credits more than 5000</li>
+                  <li class="submenus_link" id="cost_in_credits10000">Cost in Credits more than 10000</li>
+                  <li class="submenus_link" id="cost_in_credits20000">Cost in Credits more than 20000</li>
+                  <li class="submenus_link" id="cost_in_credits30000">Cost in Credits more than 30000</li>
+                  <li class="submenus_link" id="cost_in_credits40000">Cost in Credits more than 40000</li>
+                </ul>
               </li>
               <li class="submenu__item">
                 <a href="#" data-key="passengers" class="submenu__link">Passengers</a>
+                <ul class="submenus">
+                  <li class="submenus_link" id="passengers_1">Passengers more than 1</li>
+                  <li class="submenus_link" id="passengers_5">Passengers more than 5</li>
+                  <li class="submenus_link" id="passengers_10">Passengers more than 10</li>
+                  <li class="submenus_link" id="passengers_30">Passengers more than 30</li>
+                  <li class="submenus_link" id="passengers_100">Passengers more than 100</li>
+                </ul>
               </li>
               <li class="submenu__item">
-                <a href="#" data-key="hyperdrive_rating" class="submenu__link">Hyperdrive rating</a>
+                <a href="#" data-key="crew" class="submenu__link">Crew Length</a>
+
               </li>
               <li class="submenu__item">
                 <a href="#" data-key="consumables" class="submenu__link">Consumables</a>
@@ -113,6 +185,13 @@
               </li>
               <li class="submenu__item">
                 <a href="#" data-key="cost_in_credits" class="submenu__link">Cost</a>
+                <ul class="submenus">
+                  <li class="submenus_link" id="length_1">Crew more than 1</li>
+                  <li class="submenus_link" id="length_5">Crew more than 5</li>
+                  <li class="submenus_link" id="length_10">Crew more than 10</li>
+                  <li class="submenus_link" id="length_15">Crew more than 15</li>
+                  <li class="submenus_link" id="length_30">Crew more than 30</li>
+                </ul>
               </li>
               <li class="submenu__item">
                 <a href="#" data-key="created" class="submenu__link">Created</a>
@@ -129,12 +208,13 @@
             </ul>
           </li>
           <li class="header__item">
-            <a href="#Planetas" class="header__link" data-category="planets">
+            <a href="#Planetas" class="header__link">
               <img src="./Multimedia/Planetas.png" alt="Planetas" class="Logos" />
               Planets</a>
             <ul class="submenu">
               <li class="submenu__item">
-                <a href="#" data-key="diameter" class="submenu__link">Diameter</a>
+                <a href="#" class="submenu__link">Diameter</a>
+
               </li>
               <li class="submenu__item">
                 <a href="#" data-key="rotation_period" class="submenu__link">Rotation Period</a>
@@ -183,7 +263,6 @@
     </header>
 
     <section class="Inicio" id="Inicio">
-      <img src="https://d2rdhxfof4qmbb.cloudfront.net/wp-content/uploads/20180319171854/iStock-480194313-1.jpg" alt="Skeleton Crew" class="Skeleton">
       <div class="Carrusel">
         <img src="https://img.europapress.es/fotoweb/fotonoticia_20150620132813_690.jpg" alt="Luke Skywalker"
           class="Carrusel-item">
@@ -208,33 +287,26 @@
     <section class="Contenedor" id="Contenedor">
       <h1 class="titulo" id="titulo">STAR WARS</h1>
       <div class="ContenedorImagen" id="ContenedorImagen">
-        <img src="https://e.rpp-noticias.io/large/2023/04/26/102810_1420506.jpg" alt="Star Wars" id="imagencontenedor"
+        <img src="https://images4.alphacoders.com/280/280048.jpg" alt="Star Wars" id="imagencontenedor"
           class="imagencontenedor">
         <h2> MAY THE FORCE BE WITH YOU</h2>
         <p class="texto">Star Wars is an American epic space opera media franchise created by George Lucas, which began
           with the eponymous 1977 film and quickly became a worldwide pop culture phenomenon. </p>
       </div>
-      <div class="ContainerPadre" id="lista">
-        <p class="texto">The franchise has been expanded into various films and other media, including television
-          series, video games, novels, comic books, theme park attractions, and themed areas, comprising an
-          all-encompassing fictional universe.</p>
-        <img src="https://media.revistagq.com/photos/604b2f499fc97c95e82c1c14/master/pass/2101913.jpg" alt=""
-          class="ImagenStarwars">
-        <h2 class="frase">KEEP CALM AND USE THE FORCE</h2>
-      </div>
     </section>
   </main>
+  <footer>
+    <div class="redes">
+      <a target="_blank" href="https://www.facebook.com/nfrealmusic"><i class="fa-brands fa-facebook"></i></a>
+      <a target="_blank" href="https://www.instagram.com/nfrealmusic/"><i class="fa-brands fa-instagram"></i></a>
+      <a target="_blank" href="https://x.com/nfrealmusic"><i class="fa-brands fa-x-twitter"></i></a>
+      <a target="_blank" href="https://www.youtube.com/channel/UCoRR6OLuIZ2-5VxtnQIaN2w"><i></i>
+
+    </div>
+  </footer>
 
 
-  <script src="./main.js"></script>
+  <script src="./Pruebas.js"></script>
 </body>
 
 </html>
-<div class="containerPruebas" id="containerPruebas"  >
-
-
-
-  Contenido Apoyo 
-  
-  
-      </div>
