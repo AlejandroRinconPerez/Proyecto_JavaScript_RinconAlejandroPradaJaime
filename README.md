@@ -5,7 +5,7 @@
     <h1 align="center">PROYECTO_JAVASCRIPT_RINCONALEJANDROPRADAJAIME</h1>
 </p>
 <p align="center">
-    <em>Error HTTP 401 para el prompt `slogan`</em>
+    Starwars
 </p>
 <p align="center">
 	<img src="https://img.shields.io/github/license/AlejandroRinconPerez/Proyecto_JavaScript_RinconAlejandroPradaJaime?style=flat&color=0080ff" alt="licencia">
@@ -24,32 +24,17 @@
 
 ## 🔗 Enlaces Rápidos
 
-> - [📍 Resumen](#-resumen)
-> - [📦 Características](#-características)
 > - [📂 Estructura del Repositorio](#-estructura-del-repositorio)
-> - [🧩 Módulos](#-módulos)
 > - [🚀 Empezando](#-empezando)
 >   - [⚙️ Instalación](#️-instalación)
 >   - [🤖 Ejecutar Proyecto_JavaScript_RinconAlejandroPradaJaime](#-ejecutar-Proyecto_JavaScript_RinconAlejandroPradaJaime)
 >   - [🧪 Pruebas](#-pruebas)
-> - [🛠 Hoja de Ruta del Proyecto](#-hoja-de-ruta-del-proyecto)
 > - [🤝 Contribuyendo](#-contribuyendo)
 > - [📄 Licencia](#-licencia)
 > - [👏 Agradecimientos](#-agradecimientos)
 
----
 
-## 📍 Resumen
 
-Error HTTP 401 para el prompt `resumen`
-
----
-
-## 📦 Características
-
-Error HTTP 401 para el prompt `características`
-
----
 
 ## 📂 Estructura del Repositorio
 
@@ -82,18 +67,7 @@ Error HTTP 401 para el prompt `características`
     ├── index.html
     ├── jnfvjrfv.txt
     └── main.js
-## 🧩 Módulos
-
-<details closed><summary>.</summary>
-| Archivo                 | Resumen                                 |
-|-------------------------|-----------------------------------------|
-| Estilos.css             | HTTP error 401 for prompt Estilos.css   |
-| index.html              | HTTP error 401 for prompt index.html    |
-| Pruebas.js              | HTTP error 401 for prompt Pruebas.js    |
-| main.js                 | HTTP error 401 for prompt main.js       |
-| Apoyo.html              | HTTP error 401 for prompt Apoyo.html    |
-| jnfvjrfv.txt            | HTTP error 401 for prompt jnfvjrfv.txt  |
-</details>
+```
 
 ## 🚀 Primeros Pasos
 
@@ -109,7 +83,7 @@ Asegúrate de tener instaladas las siguientes dependencias en tu sistema:
 
     ```sh
     git clone https://github.com/AlejandroRinconPerez/Proyecto_JavaScript_RinconAlejandroPradaJaime
-    ```
+	```
 
 2. Cambia al directorio del proyecto:
 
@@ -119,7 +93,7 @@ Asegúrate de tener instaladas las siguientes dependencias en tu sistema:
 
 3. Instala las dependencias:
 
-    ```sh
+   ```sh
     > INSERTAR-COMANDOS-DE-INSTALACIÓN
     ```
 
@@ -139,11 +113,9 @@ Para ejecutar pruebas, corre:
     > INSERTAR-COMANDOS-DE-PRUEBAS
     ```
 
-## 🛠 Hoja de Ruta del Proyecto
 
-- [X] `► INSERTAR-TAREA-1`
-- [ ] `► INSERTAR-TAREA-2`
-- [ ] `► ...`
+
+
 
 ## 🤝 Contribuyendo
 
@@ -172,22 +144,48 @@ Para ejecutar pruebas, corre:
     git commit -m "Descripción de los cambios realizados"
     ```
 6. **Empuja tu Rama**: Sube tus cambios al repositorio remoto.
-    ```sh
+```sh
     git push origin nueva-característica-x
-    ```
-7. **Crea un Pull Request**: Abre un pull request desde tu rama en el repositorio forkeado hacia la rama principal del repositorio original.
+```
+8. **Crea un Pull Request**: Abre un pull request desde tu rama en el repositorio forkeado hacia la rama principal del repositorio original.
 
 </details>
 
+### Lenguajes de Programación
+- **HTML**: Para la estructura y el contenido de la página.
+- **CSS**: Para el diseño y los estilos.
+- - **JavaScript**: Para el diseño y los estilos.
+
+### Herramientas de Diseño
+- **Canva**: Para el diseño gráfico y la creación de imágenes.
+
+### Herramientas de Desarrollo
+- **Visual Studio Code**: Editor de código.
+
+- 
+> [!CAUTION]
+> La landing page está diseñada solo para ordenadores de escritorio. En celulares no se podra visualizar.
+
+
+## Estructura 
+
+El proyecto está organizado en las siguientes secciones principales:
+
+1. **Inicio**: Página de inicio con imagen principal de NF y logos animados.
+2. **Biografía**: Detalles sobre la vida y carrera de NF.
+3. **Discografía**: Información sobre álbumes lanzados por NF.
+4. **Tienda**: Página para comprar merchandising oficial de NF.
+5. **Giras**: Fechas y lugares de las próximas giras de NF.
+6. **Footer**: Enlaces a redes sociales y créditos.
+
+7. 
+## Fuentes y Recursos
+- [W3Schools CSS Media Queries](https://www.w3schools.com/css/css_rwd_mediaqueries.asp) - Documentación sobre Media Queries en CSS para diseño responsivo.
+- [MDN Web Docs - HTML](https://developer.mozilla.org/en-US/docs/Web/HTML) - Recursos completos y guías sobre HTML.
+- [MDN Web Docs - CSS](https://developer.mozilla.org/en-US/docs/Web/CSS) - Referencia completa y tutoriales sobre CSS.
 ## 📄 Licencia
 
-HTTP error 401 for prompt `license`
-
-## 👏 Agradecimientos
-
-HTTP error 401 for prompt `acknowledgements`
-
-
+Este proyecto está licenciado bajo la Licencia MIT - ver el archivo [LICENSE](LICENSE) para detalles.
 
 
 
