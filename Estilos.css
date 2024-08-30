@@ -234,45 +234,35 @@ header::before {
     list-style-type: none;
     position: absolute;
     top: 0;
-    /* Justo debajo del elemento padre */
     left: 100%;
-    /* Alineado a la izquierda del elemento padre */
     background-color: #000;
-    /* Color de fondo del submenú */
     display: none;
-    /* Ocultar por defecto */
     opacity: 0;
-    /* Ocultar por defecto */
     visibility: hidden;
-    /* Ocultar por defecto */
     transition: opacity 0.5s ease, visibility 0.5s ease;
-    /* Transición suave */
     padding: 10px;
     border-radius: 4px;
     z-index: 1000;
-    /* Asegura que el submenú esté por encima de otros elementos */
+    cursor: pointer;
 }
 
 .submenu__item:hover .submenus {
     display: block;
-    /* Mostrar el submenú al pasar el cursor */
     opacity: 1;
-    /* Mostrar el submenú */
     visibility: visible;
-    /* Mostrar el submenú */
 }
 
 .submenus_link {
-    width: 25rem;
+    min-width: 10rem;
+    width: auto;
+    max-width: 20rem;
     padding: 10px;
     color: #fff;
-    /* Color del texto */
-    transition: background-color 0.3s ease;
+    transition: background-color 0.5s ease;
 }
 
 .submenus_link:hover {
-    background-color: #555;
-    /* Cambiar el color de fondo al pasar el cursor */
+    color: yellow;
 }
 
 a {
