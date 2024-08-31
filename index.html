@@ -210,7 +210,7 @@
 
                 </li>
 
-                <li class="dropdown__item" data-category="species">
+                <li class="dropdown__item category" data-category="species">
                     <div class="nav__link">
                         Species <i class="ri-arrow-down-s-line dropdown__arrow"></i>
                     </div>
@@ -218,13 +218,13 @@
                     <ul class="dropdown__menu">
 
                         <li>
-                            <a  class="dropdown__link" data-key="name">
-                                Name
+                            <a  class="dropdown__link key" id="designation">
+                                Designation
                             </a>
                         </li>
 
                         <li>
-                            <a class="dropdown__link" data-key="classification">
+                            <a class="dropdown__link" id="classification">
                                 Classification
                             </a>
                         </li>
@@ -284,14 +284,20 @@
 
                     <ul class="dropdown__menu">
                         <li>
-                            <a class="dropdown__link" data-key="name">
-                                Name
+                            <a class="dropdown__link" id="model">
+                                Model
                             </a>
                         </li>
 
                         <li>
-                            <a  class="dropdown__link" data-key="model">
-                                Modelo
+                            <a  class="dropdown__link" id="starship_class">
+                                Starship class
+                            </a>
+                        </li>
+
+                        <li>
+                            <a  class="dropdown__link" id="MGLT">
+                                MGLT
                             </a>
                         </li>
 
@@ -519,6 +525,24 @@
                                 </li>
                             </ul>
                         </li>
+
+                        <li class="dropdown__subitem">
+                            <div class="dropdown__link">
+                                Gravity<i class="ri-add-line dropdown__add"></i>
+                            </div>
+
+                            <ul class="dropdown__submenu">
+                                <li>
+                                    <a  class="dropdown__sublink" id="Gravity1">Gravity more than 0</a>
+                                </li>
+
+                                <li>
+                                    <a class="dropdown__sublink" id="Gravity2">Gravity more than 1</a>
+                                </li>
+
+                            </ul>
+                        </li>
+
                     </ul>
                 </li>
 
@@ -529,25 +553,36 @@
 
                     <ul class="dropdown__menu">
                         <li>
-                            <a class="dropdown__link" data-key="director">
+                            <a class="dropdown__link" id="director">
                                 Director
                             </a>
                         </li>
 
-                        <li>
-                            <a  class="dropdown__link" data-key="episode_id">
-                                Episode
-                            </a>
+                        <li class="dropdown__subitem">
+                            <div class="dropdown__link">
+                                Episode<i class="ri-add-line dropdown__add"></i>
+                            </div>
+
+                            <ul class="dropdown__submenu">
+                                <li>
+                                    <a  class="dropdown__sublink" id="episode">Episodes</a>
+                                </li>
+
+                                <li>
+                                    <a class="dropdown__sublink" id="ordenado">Episodes chronologically</a>
+                                </li>
+
+                            </ul>
                         </li>
 
                         <li>
-                            <a class="dropdown__link" data-key="producer">
+                            <a class="dropdown__link" id="producer">
                                 Producer
                             </a>
                         </li>
 
                         <li>
-                            <a class="dropdown__link" data-key="release_date">
+                            <a class="dropdown__link" id="release_date">
                                 Release date
                             </a>
                         </li>
@@ -612,7 +647,7 @@
     </div>
   </footer>
 
-
+  <script src="./main.js"></script>
   <script src="./Pruebas.js"></script>
 </body>
 

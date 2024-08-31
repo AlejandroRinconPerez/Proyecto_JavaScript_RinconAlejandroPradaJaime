@@ -1003,6 +1003,7 @@ const showMenu = (toggleId, navId) =>{
      obtener_multiplesRango(url3, FiltroRangoGeneralPartiendodevehicles, "name", "passengers", 5, 100);
  });
  
+ 
  function FiltroRangoGeneralPartiendodeplanetas(data, llave1, llave2, Rango1 ) {
      container.innerHTML = ""
     let Variable = []
@@ -1139,5 +1140,5 @@ const showMenu = (toggleId, navId) =>{
  });
  const botonComprar98 = document.querySelector('#Gravity2');
  botonComprar98.addEventListener('click', function() {
-     obtener_multiplesRango(url5, FiltroRangoGeneralPartiendodeplanetas, "name", "gravity", 8,1 );
+     obtener_multiplesRango(url5, FiltroRangoGeneralPartiendodeplanetas, "name", "gravity", 8,1.1 );
  });
