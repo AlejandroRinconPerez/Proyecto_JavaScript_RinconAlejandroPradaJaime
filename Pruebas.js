@@ -1105,32 +1105,58 @@ const showMenu = (toggleId, navId) =>{
      obtener_multiplesRango(url5, FiltroRangoGeneralPartiendodeplanetas, "name", "surface_water", 8, 40);
  });
  
+
+ function FiltroRangoGeneralespecies(data, llave1, llave2, Rango1 ) {
+    container.innerHTML = ""
+   let Variable = []
+   Variable = data.filter((element) => {
+       return element[llave2] >= Rango1  
+   })
+   console.log(Variable)
+   Variable = Variable.sort((a,b )=> a.height-b.height)
+   container.innerHTML = ""
+   Variable.forEach((element) => {
+     const div = document.createElement("div");
+     div.innerHTML = `
+             <div class="ContainerUnidad">
+                <img src="https://electrogeek.b-cdn.net/wp-content/uploads/2023/03/1-removebg-preview.png" alt="">
+                  <h2 class="titulo2">${element[llave1]}</h2>
+                 <div class="Container">
+                     <p class="label_titulo">${mayus(llave2)}</p>
+                     <p class="label">${element[llave2] || "N/A"} </p>
+                 </div>
+             </div>
+         `;
+         container.append(div);
+   });
+ }
+
  const botonComprar89 = document.querySelector('#classification_average_50');
  botonComprar89.addEventListener('click', function() {
-     obtener_multiplesRango(url4, FiltroRangoGeneralPartiendodeplanetas, "name", "average_lifespan", 5, 50);
+     obtener_multiplesRango(url4, FiltroRangoGeneralespecies, "name", "average_lifespan", 5, 50);
  });
  
  const botonComprar90 = document.querySelector('#classification_average_100');
  botonComprar90.addEventListener('click', function() {
-     obtener_multiplesRango(url4, FiltroRangoGeneralPartiendodeplanetas, "name", "average_lifespan", 5, 100);
+     obtener_multiplesRango(url4, FiltroRangoGeneralespecies, "name", "average_lifespan", 5, 100);
  });
  
  
  
  const botonComprar92 = document.querySelector('#average_height10');
  botonComprar92.addEventListener('click', function() {
-     obtener_multiplesRango(url4, FiltroRangoGeneralPartiendodeplanetas, "name", "average_height", 5, 10);
+     obtener_multiplesRango(url4, FiltroRangoGeneralespecies, "name", "average_height", 5, 10);
  });
  
  
  const botonComprar94 = document.querySelector('#average_height100');
  botonComprar94.addEventListener('click', function() {
-     obtener_multiplesRango(url4, FiltroRangoGeneralPartiendodeplanetas, "name", "average_height", 5, 100);
+     obtener_multiplesRango(url4, FiltroRangoGeneralespecies, "name", "average_height", 5, 100);
  });
  
  const botonComprar96 = document.querySelector('#average_height200');
  botonComprar96.addEventListener('click', function() {
-     obtener_multiplesRango(url4, FiltroRangoGeneralPartiendodeplanetas, "name", "average_height", 5, 200);
+     obtener_multiplesRango(url4, FiltroRangoGeneralespecies, "name", "average_height", 5, 200);
  });
 
 

@@ -494,7 +494,7 @@ body {
 .ContenedorImagen h2 {
   color: yellow;
   position: absolute;
-  top: clamp(48vw, 49vw, 50vw);
+  top: clamp(50vw, 55vw, 55vw);
   left: clamp(3.5vw, 4vw, 4.5vw);
 }
 
@@ -525,7 +525,6 @@ body {
   margin: 10vw;
   background-image: url(./Multimedia/Contenedor.webp);
   background-size: cover;
-  height: 22rem ;
 }
 
 .ContainerUnidad img {
@@ -686,7 +685,6 @@ footer {
         text-align: center;
         align-items: center;
         margin: 2vw;
-        
     }
 
 
