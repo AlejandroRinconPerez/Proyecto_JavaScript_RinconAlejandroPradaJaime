@@ -1,15 +1,15 @@
-const showMenu = (toggleId, navId) =>{
-    const toggle = document.getElementById(toggleId),
-          nav = document.getElementById(navId)
+// const showMenu = (toggleId, navId) =>{
+//     const toggle = document.getElementById(toggleId),
+//           nav = document.getElementById(navId)
  
-    toggle.addEventListener('click', () =>{
-        nav.classList.toggle('show-menu')
+//     toggle.addEventListener('click', () =>{
+//         nav.classList.toggle('show-menu')
  
-        toggle.classList.toggle('show-icon')
-    })
- }
+//         toggle.classList.toggle('show-icon')
+//     })
+//  }
  
- showMenu('nav-toggle','nav-menu')
+//  showMenu('nav-toggle','nav-menu')
  
  let container =document.querySelector("#Contenedor")
  let url = "https://swapi.py4e.com/api/people/?page=";
@@ -1131,4 +1131,13 @@ const showMenu = (toggleId, navId) =>{
  botonComprar96.addEventListener('click', function() {
      obtener_multiplesRango(url4, FiltroRangoGeneralPartiendodeplanetas, "name", "average_height", 5, 200);
  });
- 
+
+
+ const botonComprar97 = document.querySelector('#Gravity1');
+ botonComprar97.addEventListener('click', function() {
+     obtener_multiplesRango(url5, FiltroRangoGeneralPartiendodeplanetas, "name", "gravity", 8,0 );
+ });
+ const botonComprar98 = document.querySelector('#Gravity2');
+ botonComprar98.addEventListener('click', function() {
+     obtener_multiplesRango(url5, FiltroRangoGeneralPartiendodeplanetas, "name", "gravity", 8,1 );
+ });
