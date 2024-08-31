@@ -5,335 +5,603 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Star Wars</title>
-  <link rel="stylesheet" href="./Estilos.css" />
   <link rel="icon"
     href="https://lumiere-a.akamaihd.net/v1/images/sw-favicon-acolyte_19659d3f.png?region=0%2C0%2C512%2C512" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="./Estilos.css" />
+
 </head>
 
 <body>
-  <section class="Home">
+ <section class="Home">
     <h1>STAR WARS</h1>
     <a href="#Inicio" class="button-link">START</a>
     <img src="https://i.gifer.com/origin/d1/d17fc7f864fdb8deae36bc3bf8cf6d05_w200.gif" alt="Gif" class="gif">
   </section>
 
-  <main>
-    <header>
-      <input type="checkbox" id="menu-toggle" class="menu-toggle" />
+ <main>
+     <header class="header">
+    <nav class="nav containers">
 
-      <label for="menu-toggle" class="menu-icon">
-        <img
-          src="https://static-mh.content.disney.io/matterhorn/assets/starwars/navigation/SW_Burger_White-09a4d3d1e252.svg"
-          alt="abrir" class="open">
-        <img
-          src="https://static-mh.content.disney.io/matterhorn/assets/starwars/navigation/SW_Burger_Close_White-a5617cc36d88.svg"
-          alt="Close" class="close">
-      </label>
-      <nav class="header__nav">
+        <div class="nav__menu" id="nav-menu">
+            <ul class="nav__list">
 
-        <ul class="header__list">
-          <li class="header__item">
-            <a href="#Personajes" class="header__link" data-category="characters">
-              <img src="./Multimedia/Personajes.png" alt="Personajes" class="Logos" />
-              Characters</a>
-            <ul class="submenu">
-              <li class="submenu__item">
-                <a data-key="height" class="submenu__link">Height</a>
-                <ul class="submenus">
-                  <li class="submenus_link" id="TodosAltura">All Heights</li>
-                  <li class="submenus_link" id="mayor70">Height greater than 70 cm</li>
-                  <li class="submenus_link" id="mayor90">Height greater than 90 cm</li>
-                  <li class="submenus_link" id="menor100">Height less than 100 cm</li>
-                  <li class="submenus_link" id="mayor100">Height greater than 100 cm</li>
-                  <li class="submenus_link" id="mayor120">Height greater than 120 cm</li>
-                  <li class="submenus_link" id="mayor180">Height greater than 180 cm</li>
-                  <li class="submenus_link" id="mayor200">Height greater than 200 cm</li>
-                  <li class="submenus_link" id="mayor220">Height greater than 220 cm</li>
-                </ul>
-              </li>
-              <li class="submenu__item">
-                <a href="#" data-key="birth_year" class="submenu__link">Eyes</a>
-                <ul class="submenus">
-                  <li class="submenus_link" id="TodosOjos">All Eye Colors</li>
-                  <li class="submenus_link" id="Azules">Blue Eyes</li>
-                  <li class="submenus_link" id="Amarillos">Yellow Eyes</li>
-                  <li class="submenus_link" id="Negros">Black Eyes</li>
-                </ul>
-              </li>
-              <li class="submenu__item">
-                <a href="#" data-key="eye_color" class="submenu__link">Mass</a>
-                <ul class="submenus">
-                  <li class="submenus_link" id="TodosMasa">All Masses</li>
-                  <li class="submenus_link" id="masamenor70">Mass less than 70</li>
-                  <li class="submenus_link" id="masamayor70">Mass greater than 70</li>
-                </ul>
-              </li>
-              <li class="submenu__item">
-                <a href="#" data-key="hair_color" class="submenu__link">Skin Color</a>
-                <ul class="submenus">
-                  <li class="submenus_link" id="pieltodos">All Skin Colors</li>
-                  <li class="submenus_link" id="pielcolorfair">Fair Skin</li>
-                  <li class="submenus_link" id="pielcolorwhite">White Skin</li>
-                  <li class="submenus_link" id="pielcolorlight">Light Skin</li>
-                  <li class="submenus_link" id="pielcolorgreen">Green Skin</li>
-                  <li class="submenus_link" id="pielcolorpale">Pale Skin</li>
-                  <li class="submenus_link" id="pielcolorgrey">Grey Skin</li>
-                  <li class="submenus_link" id="pielcolordark">Dark Skin</li>
-                </ul>
-              </li>
-              <li class="submenu__item">
-                <a href="#" data-key="skin_color" class="submenu__link">Hair Color</a>
-                <ul class="submenus">
-                  <li class="submenus_link" id="PelocolorTodos">All Hair Colors</li>
-                  <li class="submenus_link" id="pelocolorbrown">Brown Hair</li>
-                  <li class="submenus_link" id="pelocolorwhite">White Hair</li>
-                  <li class="submenus_link" id="pelocolornone">No Hair</li>
-                  <li class="submenus_link" id="pelocolorblack">Black Hair</li>
-                  <li class="submenus_link" id="pelocolorna">Not Applicable Hair</li>
-                </ul>
-              </li>
-              <li class="submenu__item">
-                <a href="#" data-key="gender" class="submenu__link">Gender</a>
-                <ul class="submenus">
-                  <li class="submenus_link" id="gendertodos">All Genders</li>
-                  <li class="submenus_link" id="gendermale">Male Gender</li>
-                  <li class="submenus_link" id="genderfemale">Female Gender</li>
-                  <li class="submenus_link" id="genderna">Robot Gender</li>
-                </ul>
-              </li>
+                <li class="dropdown__item">
+                    <div class="nav__link">
+                        Characters <i class="ri-arrow-down-s-line dropdown__arrow"></i>
+                    </div>
+
+                    <ul class="dropdown__menu">
+
+                        <li class="dropdown__subitem">
+                            <div class="dropdown__link">
+                                Eyes<i class="ri-add-line dropdown__add"></i>
+                            </div>
+
+                            <ul class="dropdown__submenu">
+                                <li>
+                                    <a class="dropdown__sublink" id="TodosOjos">All Eye Colors</a>
+                                </li>
+
+                                <li>
+                                    <a class="dropdown__sublink" id="Azules">Blue Eyes</a>
+                                </li>
+
+                                <li>
+                                    <a class="dropdown__sublink" id="Amarillos">Yellow Eyes</a>
+                                </li>
+                                <li>
+                                    <a  class="dropdown__sublink" id="Negros">Black Eyes</a>
+                                </li>
+
+                            </ul>
+                        </li>
+
+                        <li class="dropdown__subitem">
+                            <div class="dropdown__link">
+                                Gender<i class="ri-add-line dropdown__add"></i>
+                            </div>
+
+                            <ul class="dropdown__submenu">
+                                <li>
+                                    <a  class="dropdown__sublink" id="gendertodos">All Genders</a>
+                                </li>
+
+                                <li>
+                                    <a class="dropdown__sublink" id="gendermale">Male Gender</a>
+                                </li>
+
+                                <li>
+                                    <a class="dropdown__sublink" id="genderfemale">Female Gender</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown__sublink" id="genderna">Robot Gender</a>
+                                </li>
+                            </ul>
+
+                        </li>
+
+                        <li class="dropdown__subitem">
+                            <div class="dropdown__link">
+                                Skin Color<i class="ri-add-line dropdown__add"></i>
+                            </div>
+
+                            <ul class="dropdown__submenu">
+                                <li>
+                                    <a  class="dropdown__sublink" id="pieltodos">All Skin Colors</a>
+                                </li>
+
+                                <li>
+                                    <a  class="dropdown__sublink" id="pielcolorfair">Fair Skin</a>
+                                </li>
+
+                                <li>
+                                    <a class="dropdown__sublink" id="pielcolorwhite">White Skin</a>
+                                </li>
+                                <li>
+                                    <a  class="dropdown__sublink" id="pielcolorlight">Light Skin</a>
+                                </li>
+
+                                <li>
+                                    <a class="dropdown__sublink" id="pielcolorgreen">Green Skin</a>
+                                </li>
+
+                                <li>
+                                    <a class="dropdown__sublink" id="pielcolorpale">Pale Skin</a>
+                                </li>
+                                <li>
+                                    <a  class="dropdown__sublink" id="pielcolorgrey">Grey Skin</a>
+                                </li>
+
+                                <li>
+                                    <a  class="dropdown__sublink" id="pielcolordark">Dark Skin</a>
+                                </li>
+
+                            </ul>
+                        </li>
+
+                        <li class="dropdown__subitem">
+                            <div class="dropdown__link">
+                                Hair Color<i class="ri-add-line dropdown__add"></i>
+                            </div>
+
+                            <ul class="dropdown__submenu">
+                                <li>
+                                    <a  class="dropdown__sublink" id="PelocolorTodos">All Hair Colors</a>
+                                </li>
+
+                                <li>
+                                    <a class="dropdown__sublink" id="pelocolorbrown">Brown Hair</a>
+                                </li>
+
+                                <li>
+                                    <a class="dropdown__sublink" id="pelocolorwhite">White Hair</a>
+                                </li>
+
+                                <li>
+                                    <a class="dropdown__sublink" id="pelocolornone">No Hair</a>
+                                </li>
+
+                                <li>
+                                    <a class="dropdown__sublink" id="pelocolorblack">Black Hair</a>
+                                </li>
+
+                                <li>
+                                    <a class="dropdown__sublink" id="pelocolorna">Not Applicable Hair</a>
+                                </li>
+
+                            </ul>
+                        </li>
+
+                        <li class="dropdown__subitem">
+                            <div class="dropdown__link">
+                                Height <i class="ri-add-line dropdown__add"></i>
+                            </div>
+
+                            <ul class="dropdown__submenu">
+                                <li>
+                                    <a class="dropdown__sublink" id="TodosAltura">All Heights</a>
+                                </li>
+
+                                <li>
+                                    <a  class="dropdown__sublink" id="menor100">Height less than 100 cm</a>
+                                </li>
+
+                                <li>
+                                    <a  class="dropdown__sublink" id="mayor100">Height greater than 100 cm</a>
+                                </li>
+
+                                <li>
+                                    <a class="dropdown__sublink" id="mayor200">Height greater than 200 cm</a>
+                                </li>
+
+                            </ul>
+                        </li>
+
+
+
+                        <li class="dropdown__subitem">
+                            <div class="dropdown__link">
+                                Mass<i class="ri-add-line dropdown__add"></i>
+                            </div>
+
+                            <ul class="dropdown__submenu">
+                                <li>
+                                    <a  class="dropdown__sublink" id="TodosMasa">All Masses</a>
+                                </li>
+
+                                <li>
+                                    <a class="dropdown__sublink" id="masamenor70">Mass less than 70</a>
+                                </li>
+
+                                <li>
+                                    <a class="dropdown__sublink" id="masamayor70">Mass greater than 70</a>
+                                </li>
+
+                            </ul>
+                        </li>
+
+
+
+                    </ul>
+
+                </li>
+
+                <li class="dropdown__item" data-category="species">
+                    <div class="nav__link">
+                        Species <i class="ri-arrow-down-s-line dropdown__arrow"></i>
+                    </div>
+
+                    <ul class="dropdown__menu">
+
+                        <li>
+                            <a  class="dropdown__link" data-key="name">
+                                Name
+                            </a>
+                        </li>
+
+                        <li>
+                            <a class="dropdown__link" data-key="classification">
+                                Classification
+                            </a>
+                        </li>
+
+                        <li class="dropdown__subitem">
+                            <div class="dropdown__link">
+                                Averge Height<i class="ri-add-line dropdown__add"></i>
+                            </div>
+
+                            <ul class="dropdown__submenu">
+                                <li>
+                                    <a class="dropdown__sublink" id="average_height10">Average height more
+                                        than 10</a>
+                                </li>
+
+                                <li>
+                                    <a class="dropdown__sublink" id="average_height100">Average height more
+                                        than 100</a>
+                                </li>
+
+                                <li>
+                                    <a  class="dropdown__sublink" id="average_height200">Average height more
+                                        than 200</a>
+                                </li>
+
+                            </ul>
+                        </li>
+
+                        <li class="dropdown__subitem">
+                            <div class="dropdown__link">
+                                Average lifespan <i class="ri-add-line dropdown__add"></i>
+                            </div>
+
+                            <ul class="dropdown__submenu">
+                                <li>
+                                    <a class="dropdown__sublink" id="classification_average_50">Average
+                                        lifespan more than 50</a>
+                                </li>
+
+                                <li>
+                                    <a  class="dropdown__sublink" id="classification_average_100">Average
+                                        lifespan more than 100</a>
+                                </li>
+
+                            </ul>
+                        </li>
+
+
+                    </ul>
+
+                </li>
+
+                <li class="dropdown__item" data-category="starships">
+                    <div class="nav__link">
+                        Starships <i class="ri-arrow-down-s-line dropdown__arrow"></i>
+                    </div>
+
+                    <ul class="dropdown__menu">
+                        <li>
+                            <a class="dropdown__link" data-key="name">
+                                Name
+                            </a>
+                        </li>
+
+                        <li>
+                            <a  class="dropdown__link" data-key="model">
+                                Modelo
+                            </a>
+                        </li>
+
+                    </ul>
+                </li>
+
+                <li class="dropdown__item">
+                    <div class="nav__link">
+                        Vehicles <i class="ri-arrow-down-s-line dropdown__arrow"></i>
+                    </div>
+
+                    <ul class="dropdown__menu">
+                        <li class="dropdown__subitem">
+                            <div class="dropdown__link">
+                                Cargo capacity<i class="ri-add-line dropdown__add"></i>
+                            </div>
+
+                            <ul class="dropdown__submenu">
+                                <li>
+                                    <a  class="dropdown__sublink" id="Cargocapacity1000">Cargo Capacity more
+                                        than 1000</a>
+                                </li>
+
+                                <li>
+                                    <a  class="dropdown__sublink" id="Cargocapacity50000">Cargo Capacity
+                                        more than 50000</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown__sublink" id="Cargocapacity100000">Cargo Capacity
+                                        more than 100000</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="dropdown__subitem">
+                            <div class="dropdown__link">
+                                Cost in Credits<i class="ri-add-line dropdown__add"></i>
+                            </div>
+
+                            <ul class="dropdown__submenu">
+                                <li>
+                                    <a  class="dropdown__sublink" id="cost_in_credits1000">Cost in Credits
+                                        more than 1000</a>
+                                </li>
+
+                                <li>
+                                    <a  class="dropdown__sublink" id="cost_in_credits20000">Cost in Credits
+                                        more than 20000</a>
+                                </li>
+
+                                <li>
+                                    <a  class="dropdown__sublink" id="cost_in_credits40000">Cost in Credits
+                                        more than 40000</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="dropdown__subitem">
+                            <div class="dropdown__link">
+                                Crew<i class="ri-add-line dropdown__add"></i>
+                            </div>
+
+                            <ul class="dropdown__submenu">
+                                <li>
+                                    <a  class="dropdown__sublink" id="crew_1">Crew more than 1</a>
+                                </li>
+
+                                <li>
+                                    <a class="dropdown__sublink" id="crew_10">Crew more than 10</a>
+                                </li>
+
+                                <li>
+                                    <a class="dropdown__sublink" id="crew_20">Crew more than 20</a>
+                                </li>
+
+                            </ul>
+                        </li>
+
+                        <li class="dropdown__subitem">
+                            <div class="dropdown__link">
+                                Passengers<i class="ri-add-line dropdown__add"></i>
+                            </div>
+
+                            <ul class="dropdown__submenu">
+                                <li>
+                                    <a  class="dropdown__sublink" id="passengers_1">Passengers more than
+                                        1</a>
+                                </li>
+
+                                <li>
+                                    <a class="dropdown__sublink" id="passengers_10">Passengers more than
+                                        10</a>
+                                </li>
+
+                                <li>
+                                    <a class="dropdown__sublink" id="passengers_100">Passengers more than
+                                        100</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="dropdown__subitem">
+                            <div class="dropdown__link">
+                                Length<i class="ri-add-line dropdown__add"></i>
+                            </div>
+
+                            <ul class="dropdown__submenu">
+
+                                <li>
+                                    <a  class="dropdown__sublink" id="length_10">Length more than 10</a>
+                                </li>
+
+                                <li>
+                                    <a  class="dropdown__sublink" id="length_20">Length more than 20</a>
+                                </li>
+
+                                <li>
+                                    <a class="dropdown__sublink" id="length_30">Length more than 30</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="dropdown__item">
+                    <div class="nav__link">
+                        Planets <i class="ri-arrow-down-s-line dropdown__arrow"></i>
+                    </div>
+
+                    <ul class="dropdown__menu">
+
+                        <li class="dropdown__subitem">
+                            <div class="dropdown__link">
+                                Diameter<i class="ri-add-line dropdown__add"></i>
+                            </div>
+
+                            <ul class="dropdown__submenu">
+                                <li>
+                                    <a class="dropdown__sublink" id="diameter1000">Planet Diameter more
+                                        than 1000</a>
+                                </li>
+
+                                <li>
+                                    <a  class="dropdown__sublink" id="diameter5000">Planet Diameter more
+                                        than 5000</a>
+                                </li>
+
+                                <li>
+                                    <a  class="dropdown__sublink" id="diameter10000">Planet Diameter more than 10000</a>
+                                </li>
+
+                                <li>
+                                    <a class="dropdown__sublink" id="diameter20000">Planet Diameter more than 20000</a>
+                                </li>
+
+                            </ul>
+                        </li>
+
+                        <li class="dropdown__subitem">
+                            <div class="dropdown__link">
+                                Orbital Period<i class="ri-add-line dropdown__add"></i>
+                            </div>
+
+                            <ul class="dropdown__submenu">
+                                <li>
+                                    <a class="dropdown__sublink" id="orbital_period100">Planet Orbital
+                                        Period more than 100</a>
+                                </li>
+
+                                <li>
+                                    <a  class="dropdown__sublink" id="orbital_period200">Planet Orbital
+                                        Period more than 200</a>
+                                </li>
+
+                                <li>
+                                    <a  class="dropdown__sublink" id="orbital_period400">Planet Orbital
+                                        Period more than 400</a>
+                                </li>
+
+                            </ul>
+                        </li>
+
+                        <li class="dropdown__subitem">
+                            <div class="dropdown__link">
+                                Population<i class="ri-add-line dropdown__add"></i>
+                            </div>
+
+                            <ul class="dropdown__submenu">
+                                <li>
+                                    <a  class="dropdown__sublink" id="population100">Planet Population more than 100</a>
+                                </li>
+
+                                <li>
+                                    <a  class="dropdown__sublink" id="population10000">Planet Population
+                                        more than 10000</a>
+                                </li>
+
+                                <li>
+                                    <a  class="dropdown__sublink" id="population30000">Planet Population
+                                        more than 30000</a>
+                                </li>
+
+                            </ul>
+                        </li>
+
+                        <li class="dropdown__subitem">
+                            <div class="dropdown__link">
+                                Surface Water<i class="ri-add-line dropdown__add"></i>
+                            </div>
+
+                            <ul class="dropdown__submenu">
+                                <li>
+                                    <a  class="dropdown__sublink" id="surface_water10">Surface water more than 10</a>
+                                </li>
+
+                                <li>
+                                    <a  class="dropdown__sublink" id="surface_water30">Surface water more than 30</a>
+                                </li>
+
+                                <li>
+                                    <a  class="dropdown__sublink" id="surface_water40">Surface water more than 40</a>
+                                </li>
+                                <li>
+                                    <a  class="dropdown__sublink" id="surface_water50">Surface water more than 50</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="dropdown__item" data-category="films">
+                    <div class="nav__link">
+                        Films <i class="ri-arrow-down-s-line dropdown__arrow"></i>
+                    </div>
+
+                    <ul class="dropdown__menu">
+                        <li>
+                            <a class="dropdown__link" data-key="director">
+                                Director
+                            </a>
+                        </li>
+
+                        <li>
+                            <a  class="dropdown__link" data-key="episode_id">
+                                Episode
+                            </a>
+                        </li>
+
+                        <li>
+                            <a class="dropdown__link" data-key="producer">
+                                Producer
+                            </a>
+                        </li>
+
+                        <li>
+                            <a class="dropdown__link" data-key="release_date">
+                                Release date
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </li>                
             </ul>
-          </li>
-          <li class="header__item">
-            <a href="#Especies" data-category="species" class="header__link">
-              <img src="./Multimedia/Especies.png" alt="Especies" class="Logos" />
-              Especies</a>
-            <ul class="submenu">
-              <li class="submenu__item">
-                <a href="#" data-key="average_height" class="submenu__link">Average Height</a>
-                <ul class="submenus">
-                  <li class="submenus_link" id="average_height10">Average height more than 10</li>
-                  <li class="submenus_link" id="average_height50">Average height more than 50</li>
-                  <li class="submenus_link" id="average_height100">Average height more than 100</li>
-                  <li class="submenus_link" id="classification_average_100">Average lifespan more than 100</li>
-                  <li class="submenus_link" id="average_height150">Average height more than 150</li>
-                  <li class="submenus_link" id="average_height200">Average height more than 200</li>
-                </ul>
-              </li>
-              <li class="submenu__item">
-                <a href="#" class="submenu__link">Average lifespan</a>
-                <ul class="submenus">
-                  <li class="submenus_link" id="classification_average_10">Average lifespan more than 10</li>
-                  <li class="submenus_link" id="classification_average_20">Average lifespan more than 20</li>
-                  <li class="submenus_link" id="classification_average_50">Average lifespan more than 50</li>
-                  <li class="submenus_link" id="classification_average_100">Average lifespan more than 100</li>
-                  <li class="submenus_link" id="length_8">Crew more than 8</li>
-                </ul>
-              </li>
-            </ul>
-          </li>
-          <li class="header__item">
-            <a href="#Naves" class="header__link" data-category="starships">
-              <img src="./Multimedia/Naves.png" alt="Naves" class="Logos" />
-              Starships</a>
-            <ul class="submenu">
-              <li class="submenu__item">
-                <a href="#" data-key="model" class="submenu__link">Cargo Capacity</a>
-              </li>
-              <li class="submenu__item">
-                <a href="#" class="submenu__link">Cost in Credits</a>
-              </li>
-              <li class="submenu__item">
-                <a href="#" data-key="passengers" class="submenu__link">Passengers</a>
+        </div>
 
-              </li>
-              <li class="submenu__item">
-                <a href="#" data-key="crew" class="submenu__link">Crew Length</a>
+        <div class="nav__data">
+          <a href="#" class="nav__logo">
+             <i class="ri-planet-line"></i> STAR WARS
+          </a>
 
-              </li>
-              <li class="submenu__item">
-                <a href="#" data-key="consumables" class="submenu__link">Consumables</a>
-              </li>
-            </ul>
-          </li>
-          <li class="header__item">
-            <a href="#Vehiculos" class="header__link" data-category="vehicles">
-              <img src="./Multimedia/Vehiculos.png" alt="Vehiculos" class="Logos" />
-              Vehicles</a>
-            <ul class="submenu">
-              <li class="submenu__item">
-                <a href="#" data-key="cargo_capacity" class="submenu__link">Cargo capacity</a>
-                <ul class="submenus">
-                  <li class="submenus_link" id="Cargocapacity1000">Cargo Capacity more than 1000</li>
-                  <li class="submenus_link" id="Cargocapacity10000">Cargo Capacity more than 10000</li>
-                  <li class="submenus_link" id="Cargocapacity50000">Cargo Capacity more than 50000</li>
-                  <li class="submenus_link" id="Cargocapacity100000">Cargo Capacity more than 100000</li>
-                </ul>
-              </li>
-              <li class="submenu__item">
-                <a href="#" class="submenu__link">Cost in Credits</a>
-                <ul class="submenus">
-                  <li class="submenus_link" id="cost_in_credits1000">Cost in Credits more than 1000</li>
-                  <li class="submenus_link" id="cost_in_credits5000">Cost in Credits more than 5000</li>
-                  <li class="submenus_link" id="cost_in_credits10000">Cost in Credits more than 10000</li>
-                  <li class="submenus_link" id="cost_in_credits20000">Cost in Credits more than 20000</li>
-                  <li class="submenus_link" id="cost_in_credits30000">Cost in Credits more than 30000</li>
-                  <li class="submenus_link" id="cost_in_credits40000">Cost in Credits more than 40000</li>
-                </ul>
-              </li>
-              <li class="submenu__item">
-                <a href="#" data-key="cost_in_credits" class="submenu__link">Crew</a>
-                <ul class="submenus">
-                  <li class="submenus_link" id="crew_1">Crew more than 1</li>
-                  <li class="submenus_link" id="crew_5">Crew more than 5</li>
-                  <li class="submenus_link" id="crew_10">Crew more than 10</li>
-                  <li class="submenus_link" id="crew_15">Crew more than 15</li>
-                  <li class="submenus_link" id="crew_20">Crew more than 20</li>
-                </ul>
-              </li>
-              <li class="submenu__item">
-                <a href="#" class="submenu__link">Passengers</a>
-                <ul class="submenus">
-                  <li class="submenus_link" id="passengers_1">Passengers more than 1</li>
-                  <li class="submenus_link" id="passengers_5">Passengers more than 5</li>
-                  <li class="submenus_link" id="passengers_10">Passengers more than 10</li>
-                  <li class="submenus_link" id="passengers_30">Passengers more than 30</li>
-                  <li class="submenus_link" id="passengers_100">Passengers more than 100</li>
-                </ul>
-              </li>
-              <li class="submenu__item">
-                <a href="#" class="submenu__link">Length</a>
-                <ul class="submenus">
-                  <li class="submenus_link" id="length_1">Crew more than 1</li>
-                  <li class="submenus_link" id="length_5">Crew more than 5</li>
-                  <li class="submenus_link" id="length_6">Crew more than 6</li>
-                  <li class="submenus_link" id="length_7">Crew more than 7</li>
-                  <li class="submenus_link" id="length_8">Crew more than 8</li>
-                  <li class="submenus_link" id="length_9">Crew more than 9</li>
-                  <li class="submenus_link" id="length_10">Crew more than 10</li>
-                  <li class="submenus_link" id="length_15">Crew more than 15</li>
-                  <li class="submenus_link" id="length_20">Crew more than 20</li>
-                  <li class="submenus_link" id="length_30">Crew more than 30</li>
-                </ul>
-              </li>
+          <div class="nav__toggle" id="nav-toggle">
+             <i class="ri-menu-line nav__burger"></i>
+             <i class="ri-close-line nav__close"></i>
+          </div>
+       </div>
+    </nav>
+</header>
+<section class="Inicio" id="Inicio">
+ <div class="Carrusel">
+   <img src="https://img.europapress.es/fotoweb/fotonoticia_20150620132813_690.jpg" alt="Luke Skywalker"
+     class="Carrusel-item">
+   <img src="https://lumiere-a.akamaihd.net/v1/images/darth-vader-main_4560aff7.jpeg?region=71%2C0%2C1139%2C854"
+     alt="Darth_Vader" class="Carrusel-item">
+   <img src="https://lumiere-a.akamaihd.net/v1/images/leia-organa-main_9af6ff81.jpeg?region=493%2C153%2C787%2C787"
+     alt="Princesa Leia" class="Carrusel-item">
+   <img src="https://lumiere-a.akamaihd.net/v1/images/Yoda-Retina_2a7ecc26.jpeg?region=0%2C0%2C1536%2C768"
+     alt="Yoda" class="Carrusel-item">
+   <img src="https://lumiere-a.akamaihd.net/v1/images/c-3po-main_d6850e28.jpeg?region=336%2C0%2C537%2C536"
+     alt="C-3P0" class="Carrusel-item">
+   <img src="https://lumiere-a.akamaihd.net/v1/images/r2-d2-main_f315b094.jpeg?region=167%2C0%2C1071%2C536"
+     alt="R2-D2" class="Carrusel-item">
+   <img src="https://sm.ign.com/t/ign_latam/screenshot/default/aakin_h9w7.1280.jpg" alt="Anikin"
+     class="Carrusel-item">
+   <img src="https://e.rpp-noticias.io/xlarge/2022/05/26/255725_1264107.jpg" alt="" class="Carrusel-item">
+   <img src="https://lumiere-a.akamaihd.net/v1/images/chewie-main_e1968a8a.jpeg?region=27%2C0%2C535%2C536"
+     alt="Chewbacca" class="Carrusel-item">
+ </div>
+</section>
 
-            </ul>
-          </li>
-          <li class="header__item">
-            <a href="#Planetas" class="header__link">
-              <img src="./Multimedia/Planetas.png" alt="Planetas" class="Logos" />
-              Planets</a>
-            <ul class="submenu">
-              <li class="submenu__item">
-                <a href="#" class="submenu__link">Diameter</a>
-                <ul class="submenus">
-                  <li class="submenus_link" id="diameter1000">Planet Diameter more than 1000</li>
-                  <li class="submenus_link" id="diameter5000">Planet Diameter more than 5000</li>
-                  <li class="submenus_link" id="diameter10000">Planet Diameter more than 10000</li>
-                  <li class="submenus_link" id="diameter15000">Planet Diameter more than 15000</li>
-                  <li class="submenus_link" id="diameter20000">Planet Diameter more than 20000</li>
-                </ul>
-              </li>
-              <li class="submenu__item">
-                <a href="#" class="submenu__link">Orbital Period
-                  <ul class="submenus">
-                    <li class="submenus_link" id="orbital_period100">Planet Orbital Period more than 100</li>
-                    <li class="submenus_link" id="orbital_period200">Planet Orbital Period more than 200</li>
-                    <li class="submenus_link" id="orbital_period300">Planet Orbital Period more than 300</li>
-                    <li class="submenus_link" id="orbital_period400">Planet Orbital Period more than 400</li>
-                    <li class="submenus_link" id="orbital_period500">Planet Orbital Period more than 500</li>
-                  </ul>
-                </a>
-              </li>
-              <li class="submenu__item">
-                <a href="#" data-key="gravity" class="submenu__link">Population</a>
-                <ul class="submenus">
-                  <li class="submenus_link" id="population100">Planet Population more than 100</li>
-                  <li class="submenus_link" id="population1000">Planet Population more than 1000</li>
-                  <li class="submenus_link" id="population10000">Planet Population more than 10000</li>
-                  <li class="submenus_link" id="population20000">Planet Population more than 20000</li>
-                  <li class="submenus_link" id="population30000">Planet Population more than 30000</li>
-                </ul>
-              </li>
-              <li class="submenu__item">
-                <a href="#" class="submenu__link">Surface_water</a>
-                <ul class="submenus">
-                  <li class="submenus_link" id="surface_water10">Surface water more than 10</li>
-                  <li class="submenus_link" id="surface_water30">Surface water more than 30</li>
-                  <li class="submenus_link" id="surface_water40">Surface water more than 40</li>
-                  <li class="submenus_link" id="surface_water50">Surface water more than 50</li>
-                </ul>
-              </li>
-
-            </ul>
-          </li>
-          <li class="header__item">
-            <a href="#Peliculas" class="header__link" data-category="films">
-              <img src="./Multimedia/Peliculas.png" alt="Peliculas" class="Logos" />
-              Movies</a>
-            <ul class="submenu">
-              <li class="submenu__item">
-                <a href="#" data-key="director" class="submenu__link">Director</a>
-              </li>
-              <li class="submenu__item">
-                <a href="#" data-key="episode_id" class="submenu__link">Episode</a>
-              </li>
-              <li class="submenu__item">
-                <a href="#" data-key="edited" class="submenu__link">Edited</a>
-              </li>
-              <li class="submenu__item">
-                <a href="#" data-key="opening_crawl" class="submenu__link">Opening</a>
-              </li>
-              <li class="submenu__item">
-                <a href="#" data-key="producer" class="submenu__link">Producer</a>
-              </li>
-              <li class="submenu__item">
-                <a href="#" data-key="release_date" class="submenu__link">Release date</a>
-              </li>
-            </ul>
-          </li>
-        </ul>
-      </nav>
-      <img
-        src="https://lumiere-a.akamaihd.net/v1/images/sw_logo_stacked_2x-52b4f6d33087_7ef430af.png?region=0,0,586,254"
-        alt="logo starwars" class="Logo_starwars">
-    </header>
-
-    <section class="Inicio" id="Inicio">
-      <div class="Carrusel">
-        <img src="https://img.europapress.es/fotoweb/fotonoticia_20150620132813_690.jpg" alt="Luke Skywalker"
-          class="Carrusel-item">
-        <img src="https://lumiere-a.akamaihd.net/v1/images/darth-vader-main_4560aff7.jpeg?region=71%2C0%2C1139%2C854"
-          alt="Darth_Vader" class="Carrusel-item">
-        <img src="https://lumiere-a.akamaihd.net/v1/images/leia-organa-main_9af6ff81.jpeg?region=493%2C153%2C787%2C787"
-          alt="Princesa Leia" class="Carrusel-item">
-        <img src="https://lumiere-a.akamaihd.net/v1/images/Yoda-Retina_2a7ecc26.jpeg?region=0%2C0%2C1536%2C768"
-          alt="Yoda" class="Carrusel-item">
-        <img src="https://lumiere-a.akamaihd.net/v1/images/c-3po-main_d6850e28.jpeg?region=336%2C0%2C537%2C536"
-          alt="C-3P0" class="Carrusel-item">
-        <img src="https://lumiere-a.akamaihd.net/v1/images/r2-d2-main_f315b094.jpeg?region=167%2C0%2C1071%2C536"
-          alt="R2-D2" class="Carrusel-item">
-        <img src="https://sm.ign.com/t/ign_latam/screenshot/default/aakin_h9w7.1280.jpg" alt="Anikin"
-          class="Carrusel-item">
-        <img src="https://e.rpp-noticias.io/xlarge/2022/05/26/255725_1264107.jpg" alt="" class="Carrusel-item">
-        <img src="https://lumiere-a.akamaihd.net/v1/images/chewie-main_e1968a8a.jpeg?region=27%2C0%2C535%2C536"
-          alt="Chewbacca" class="Carrusel-item">
-      </div>
-    </section>
-
-    <section class="Contenedor" id="Contenedor">
-      <h1 class="titulo" id="titulo">STAR WARS</h1>
-      <div class="ContenedorImagen" id="ContenedorImagen">
-        <img src="https://images4.alphacoders.com/280/280048.jpg" alt="Star Wars" id="imagencontenedor"
-          class="imagencontenedor">
-        <h2> MAY THE FORCE BE WITH YOU</h2>
-        <p class="texto">Star Wars is an American epic space opera media franchise created by George Lucas, which began
-          with the eponymous 1977 film and quickly became a worldwide pop culture phenomenon. </p>
-      </div>
-    </section>
-  </main>
+<section class="Contenedor" id="Contenedor">
+ <h1 class="titulo" id="titulo">STAR WARS</h1>
+ <div class="ContenedorImagen" id="ContenedorImagen">
+   <img src="https://images4.alphacoders.com/280/280048.jpg" alt="Star Wars" id="imagencontenedor"
+     class="imagencontenedor">
+   <h2> MAY THE FORCE BE WITH YOU</h2>
+   <p class="texto">Star Wars is an American epic space opera media franchise created by George Lucas, which began
+     with the eponymous 1977 film and quickly became a worldwide pop culture phenomenon. </p>
+ </div>
+</section>
+ </main>
   <footer>
     <div class="redes">
       <a target="_blank" href="https://www.facebook.com/starwarsla/"><i class="fa-brands fa-facebook"></i></a>
@@ -343,7 +611,6 @@
 
     </div>
   </footer>
-
 
 
   <script src="./Pruebas.js"></script>

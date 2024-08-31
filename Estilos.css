@@ -1,457 +1,587 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap");
+
+:root {
+  --header-height: 3.5rem;
+
+  --black-color: hsl(220, 24%, 12%);
+  --black-color-light: hsl(220, 24%, 15%);
+  --black-color-lighten: hsl(220, 20%, 18%);
+  --white-color: #fff;
+  --body-color: hsl(220, 100%, 97%);
+
+
+  --body-font: "Montserrat", sans-serif;
+  --normal-font-size: .938rem;
+
+  --font-regular: 400;
+  --font-semi-bold: 600;
+
+  --z-tooltip: 10;
+  --z-fixed: 100;
+}
+
+@media screen and (min-width: 1024px) {
+  :root {
+    --normal-font-size: 1rem;
+  }
+}
+
+/*=============== BASE ===============*/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  background-color: var(--body-color);
+}
+
+ul {
+  list-style: none;
+
+}
+
+a {
+  text-decoration: none;
+}
+
+.containers {
+  max-width: 1120px;
+  margin-inline: 1.5rem;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-image: url("https://lumiere-a.akamaihd.net/v1/images/scary-star-wars-planets-mustafar_article-feature_36ea058c.jpeg?region=0,0,1600,900");
+    background-size: cover;
+    background-position: center;
+  box-shadow: 0 2px 16px hsla(220, 32%, 8%, .3);
+  z-index: var(--z-fixed);
+}
+
+.nav {
+  height: var(--header-height);
+}
+
+.nav__logo, 
+.nav__burger, 
+.nav__close {
+  color: var(--white-color);
+}
+
+.nav__data {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav__logo {
+  display: inline-flex;
+  align-items: center;
+  column-gap: .25rem;
+  font-weight: var(--font-semi-bold);
+  font-family: "star-wars";
+  font-size: 2.2rem;
+}
+
+.nav__logo i {
+  font-weight: initial;
+  font-size: 2rem;
+}
+
+.nav__toggle {
+  position: relative;
+  width: 32px;
+  height: 32px;
+}
+
+.nav__burger, 
+.nav__close {
+  position: absolute;
+  width: max-content;
+  height: max-content;
+  inset: 0;
+  margin: auto;
+  font-size: 1.25rem;
+  cursor: pointer;
+  transition: opacity .1s, transform .4s;
+}
+
+.nav__close {
+  opacity: 0;
+}
+
+@media screen and (max-width: 1118px) {
+  .nav__menu {
+    position: absolute;
+    left: 0;
+    top: 2.5rem;
+    width: 100%;
+    height: calc(100vh - 3.5rem);
+    overflow: auto;
+    pointer-events: none;
+    opacity: 0;
+    transition: top .4s, opacity .3s;
+  }
+  .nav__menu::-webkit-scrollbar {
+    width: 0;
+  }
+  .nav__list {
+    padding-top: 1rem;
+  }
+}
+
+.nav__link {
+  color: var(--white-color);
+  font-weight: var(--font-semi-bold);
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color .3s;
+}
+
+.nav__link:hover {
+  background-color: var(--black-color-light);
+}
+
+.show-menu {
+  opacity: 1;
+  top: 3.5rem;
+  pointer-events: initial;
+}
+
+/* Show icon */
+.show-icon .nav__burger {
+  opacity: 0;
+  transform: rotate(90deg);
+}
+.show-icon .nav__close {
+  opacity: 1;
+  transform: rotate(90deg);
+}
+
+.dropdown__item {
+  cursor: pointer;
+}
+
+.dropdown__arrow {
+  font-size: 1.25rem;
+  font-weight: initial;
+  transition: transform .4s;
+}
+
+.dropdown__link, 
+.dropdown__sublink {
+  padding: 1.25rem 1.25rem 1.25rem 2.5rem;
+  color: var(--white-color);
+  background-color: var(--black-color-light);
+  display: flex;
+  align-items: center;
+  column-gap: .5rem;
+  font-weight: var(--font-semi-bold);
+  transition: background-color .3s;
+}
+
+.dropdown__link i, 
+.dropdown__sublink i {
+  font-size: 1.25rem;
+  font-weight: initial;
+}
+
+.dropdown__link:hover, 
+.dropdown__sublink:hover {
+  background-color: var(--black-color);
+}
+
+.dropdown__menu, 
+.dropdown__submenu {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .4s ease-out;
+}
+
+.dropdown__item:hover .dropdown__menu, 
+.dropdown__subitem:hover > .dropdown__submenu {
+  max-height: 1000px;
+  transition: max-height .4s ease-in;
+}
+
+.dropdown__item:hover .dropdown__arrow {
+  transform: rotate(180deg);
+}
+
+.dropdown__add {
+  margin-left: auto;
+}
+
+.dropdown__sublink {
+  background-color: var(--black-color-lighten);
+}
+
+@media screen and (max-width: 340px) {
+  .containers {
+    margin-inline: 1rem;
+  }
+
+  .nav__link {
+    padding-inline: 1rem;
+  }
+}
+
+@media screen and (min-width: 1118px) {
+  .containers {
+    margin-inline: auto;
+  }
+
+  .nav {
+    height: calc(var(--header-height) + 2rem);
+    display: flex;
+    justify-content: space-between;
+  }
+  .nav__toggle {
+    display: none;
+  }
+  .nav__list {
+    height: 100%;
+    display: flex;
+    column-gap: 3rem;
+  }
+  .nav__link {
+    height: 100%;
+    padding: 0;
+    justify-content: initial;
+    column-gap: .25rem;
+  }
+  .nav__link:hover {
+    background-color: transparent;
+  }
+
+  .dropdown__item, 
+  .dropdown__subitem {
+    position: relative;
+  }
+
+  .dropdown__menu, 
+  .dropdown__submenu {
+    max-height: initial;
+    overflow: initial;
+    position: absolute;
+    left: 0;
+    top: 6rem;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .3s, top .3s;
+  }
+
+  .dropdown__link, 
+  .dropdown__sublink {
+    padding-inline: 1rem 3.5rem;
+  }
+
+  .dropdown__subitem .dropdown__link {
+    padding-inline: 1rem;
+  }
+
+  .dropdown__submenu {
+    position: absolute;
+    left: 100%;
+    top: .5rem;
+    overflow: auto;
+    width: 20rem;
+  }
+
+  .dropdown__item:hover .dropdown__menu {
+    opacity: 1;
+    top: 5.5rem;
+    pointer-events: initial;
+    transition: top .3s;
+  }
+
+  .dropdown__subitem:hover > .dropdown__submenu {
+    opacity: 1;
+    top: 0;
+    pointer-events: initial;
+    transition: top .3s;
+  }
+}
+
+
 @font-face {
-    font-family: Matterhorn;
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
-    src: url("https://static-mh.content.disney.io/matterhorn/assets/matterhorn/sans/matterhorn-regular-b6b4f5da5330.eot?#iefix") format("embedded-opentype"), url("https://static-mh.content.disney.io/matterhorn/assets/matterhorn/sans/matterhorn-regular-eed88f0756d6.woff") format("woff"), url("https://static-mh.content.disney.io/matterhorn/assets/matterhorn/sans/matterhorn-regular-07d90ea407f5.ttf") format("truetype"), url("https://static-mh.content.disney.io/matterhorn/assets/matterhorn/sans/matterhorn-regular-bc3e22ea86d1.svg#Matterhorn") format("svg")
+  font-family: Matterhorn;
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src: url("https://static-mh.content.disney.io/matterhorn/assets/matterhorn/sans/matterhorn-regular-b6b4f5da5330.eot?#iefix") format("embedded-opentype"), url("https://static-mh.content.disney.io/matterhorn/assets/matterhorn/sans/matterhorn-regular-eed88f0756d6.woff") format("woff"), url("https://static-mh.content.disney.io/matterhorn/assets/matterhorn/sans/matterhorn-regular-07d90ea407f5.ttf") format("truetype"), url("https://static-mh.content.disney.io/matterhorn/assets/matterhorn/sans/matterhorn-regular-bc3e22ea86d1.svg#Matterhorn") format("svg")
 }
 
 @font-face {
-    font-family: 'star-wars';
-    src: url('./Fuentes/titulo.ttf') format('truetype');
+  font-family: 'star-wars';
+  src: url('./Fuentes/titulo.ttf') format('truetype');
 }
 
 * {
-    scroll-behavior: smooth;
-    font-family: "Matterhorn";
+  scroll-behavior: smooth;
+  font-family: "Matterhorn";
 
 }
 
 body {
-    margin: 0;
-    background-color: #000;
-    width: 100vw;
-    height: 100vh;
-    color: white;
-    overflow-x: hidden;
-    box-sizing: border-box;
+  margin: 0;
+  background-color: #000;
+  width: 100vw;
+  height: 100vh;
+  color: white;
+  overflow-x: hidden;
+  box-sizing: border-box;
 }
 
 .Home {
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    background-image: url(./Multimedia/Fondo.webp);
-    background-repeat: no-repeat;
-    background-size: cover;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-image: url(./Multimedia/Fondo.webp);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .Home h1 {
-    font-family: "star-wars";
-    font-size: clamp(1.75rem, 3.5rem, 7rem);
-    text-shadow: 0px 0px 20px white;
-    margin: 0;
-    margin-bottom: 5vw;
+  font-family: "star-wars";
+  font-size: clamp(1.75rem, 3.5rem, 7rem);
+  text-shadow: 0px 0px 20px white;
+  margin: 0;
+  margin-bottom: 5vw;
 }
 .gif{
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 8rem;
-    z-index: 100;
-    filter: contrast(120%);
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 8rem;
+  z-index: 100;
+  filter: contrast(120%);
 
 }
 .button-link {
-    background-image: url(https://www.ambientum.com/wp-content/uploads/2024/04/space-4984262_1280-696x464.jpg);
-    background-size: cover;
-    color: #fff;
-    border: none;
-    position: relative;
-    font-family: "Matterhorn";
-    height: 60px;
-    font-size: 1.6rem;
-    padding: 0 2em;
-    transition: 800ms ease all;
-    line-height: 60px;
-    box-shadow: 0px 0px 25px 15px #003366;
-    letter-spacing: 0.5px;
-    border-radius: 20px;
+  background-image: url(https://www.ambientum.com/wp-content/uploads/2024/04/space-4984262_1280-696x464.jpg);
+  background-size: cover;
+  color: #fff;
+  border: none;
+  position: relative;
+  font-family: "Matterhorn";
+  height: 60px;
+  font-size: 1.6rem;
+  padding: 0 2em;
+  transition: 800ms ease all;
+  line-height: 60px;
+  box-shadow: 0px 0px 25px 15px #003366;
+  letter-spacing: 0.5px;
+  border-radius: 20px;
 
 }
 
 .button-link:hover {
-    background-image: url(https://imagenes.muyinteresante.com/files/article_social_75/uploads/2023/10/26/653a70fe92542.jpeg);
-    box-shadow: 0px 0px 30px 15px #4A148C;
-    scale: 1.1;
-    color: yellow;
-    letter-spacing: 10px;
+  background-image: url(https://imagenes.muyinteresante.com/files/article_social_75/uploads/2023/10/26/653a70fe92542.jpeg);
+  box-shadow: 0px 0px 30px 15px #4A148C;
+  scale: 1.1;
+  color: yellow;
+  letter-spacing: 10px;
 
 }
 
 .button-link:before,
 .button-link:after {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    height: 2px;
-    width: 0;
-    background: purple;
-    transition: 1s ease all;
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 2px;
+  width: 0;
+  background: purple;
+  transition: 1s ease all;
 }
 
 .button-link:after {
-    right: inherit;
-    top: inherit;
-    left: 0;
-    bottom: 0;
+  right: inherit;
+  top: inherit;
+  left: 0;
+  bottom: 0;
 }
 
 .button-link:hover:before,
 .button-link:hover:after {
-    width: 100%;
-    transition: 1s ease all;
+  width: 100%;
+  transition: 1s ease all;
 }
 
 .Inicio {
-    width: 100vw;
-    background-color: #000;
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
+  width: 100vw;
+  background-color: #000;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
 }
 
 
 .Carrusel {
-    width: 100vw;
-    height: 20rem;
-    display: flex;
-    margin: auto;
+  width: 100vw;
+  height: 20rem;
+  display: flex;
+  margin: auto;
 }
 
 .Carrusel-item {
-    width: 0px;
-    flex-grow: 1;
-    object-fit: cover;
-    opacity: .3;
-    transition: .5s ease;
-    border-radius: 10px;
+  width: 0px;
+  flex-grow: 1;
+  object-fit: cover;
+  opacity: .3;
+  transition: .5s ease;
+  border-radius: 10px;
 }
 
 .Carrusel-item:hover {
-    width: 15rem;
-    opacity: 1;
-    filter: contrast(120%);
+  width: 15rem;
+  opacity: 1;
+  filter: contrast(120%);
 }
 
 .Carrusel:hover>.Carrusel-item:not(:hover) {
-    filter: blur(5px);
+  filter: blur(5px);
 }
 
-header {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    position: sticky;
-    width: 100vw;
-    height: 80px;
-    top: 0;
-    z-index: 1;
-    background-image: URL("https://lumiere-a.akamaihd.net/v1/images/scary-star-wars-planets-mustafar_article-feature_36ea058c.jpeg?region=0,0,1600,900");
-    background-size: cover;
-    background-position: center;
-
-}
-
-header::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url("https://lumiere-a.akamaihd.net/v1/images/scary-star-wars-planets-mustafar_article-feature_36ea058c.jpeg?region=0,0,1600,900");
-    background-size: cover;
-    background-position: center;
-    filter: blur(2px); 
-    z-index: -1; 
-}
-
-.Logo_starwars {
-    width: 7rem;
-}
-
-.menu-icon {
-    display: block;
-    cursor: pointer;
-    z-index: 100;
-}
-
-.close {
-    display: none;
-}
-
-.header__nav {
-    position: relative;
-}
-
-.header__list .visible {
-    opacity: 1;
-    visibility: visible;
-    transition: 0.5s;
-}
-
-.header__list {
-    display: none;
-    flex-direction: column;
-    list-style: none;
-    text-transform: uppercase;
-    align-items: center;
-    position: absolute;
-    background-color: rgba(0, 0, 0, 0.5);
-    top: 30px;
-    left: 0;
-    width: 100%;
-    padding: 40px;
-    margin: 0;
-}
-
-.header__item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
-    width: 100%;
-}
-
-.header__link {
-    text-decoration: none;
-    color: inherit;
-    display: flex;
-    text-align: center;
-    flex-direction: column;
-    align-items: center;
-    transition-duration: 0.5s;
-    position: relative;
-}
-
-.submenus {
-    list-style-type: none;
-    position: absolute;
-    top: 0;
-    left: 100%;
-    background-color: #000;
-    display: none;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.5s ease, visibility 0.5s ease;
-    padding: 10px;
-    border-radius: 4px;
-    z-index: 1000;
-    cursor: pointer;
-}
-
-.submenu__item:hover .submenus {
-    display: block;
-    opacity: 1;
-    visibility: visible;
-}
-
-.submenus_link {
-    min-width: 10rem;
-    width: auto;
-    max-width: 20rem;
-    padding: 10px;
-    color: #fff;
-    transition: background-color 0.5s ease;
-}
-
-.submenus_link:hover {
-    color: yellow;
-}
-
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
-.header__link:hover {
-    color: yellow;
-    transition-duration: 0.5s;
-    filter: sepia(1) saturate(10) brightness(1.2);
-}
-
-.Logos {
-    width: 2.5rem;
-    height: auto;
-}
-
-.submenu {
-    display: none;
-    position: static;
-    top: 100%;
-    left: 0;
-    background-color: transparent;
-    padding: 0.5rem;
-    list-style: none;
-    margin: 0;
-    text-align: center;
-}
-
-.submenu__item {
-    margin: 0.5rem 0;
-}
-
-.submenu__link {
-    color: #fff;
-    text-decoration: none;
-}
-
-.submenu__link:hover {
-    color: yellow;
-    transition-duration: 1s;
-}
-
-.header__item:hover .submenu {
-    display: block;
-}
-
-.menu-toggle {
-    display: none;
-}
-
-.menu-toggle:checked~.menu-icon .open {
-    display: none;
-}
-
-.menu-toggle:checked~.menu-icon .close {
-    display: block;
-}
-
-.menu-toggle:checked~.header__list {
-    display: flex;
-}
-
-.menu-toggle:checked~.header__nav .header__list {
-    display: flex;
-}
 
 .Contenedor {
-    width: 100vw;
-    height: auto;
-    text-align: center;
-    font-family: "Matterhorn";
-    position: relative;
-    background-image: url(./Multimedia/Contenedor.webp);
-    background-size: cover;
+  width: 100vw;
+  height: auto;
+  text-align: center;
+  font-family: "Matterhorn";
+  position: relative;
+  background-image: url(./Multimedia/Fondo.webp);
+  background-size: cover;
+  scroll-behavior: smooth;
 
 }
 
 .titulo {
-    color: white;
-    font-family: "star-wars";
-    font-size: clamp(1.75rem, 3.5rem, 7rem);
-    margin: 0;
-    margin-top: 1rem;
+  color: white;
+  font-family: "star-wars";
+  font-size: clamp(1.75rem, 3.5rem, 7rem);
+  margin: 0;
+  margin-top: 1rem;
 }
 
 .imagencontenedor {
-    width: clamp(75%, 80%, 85%);
-    border-radius: 20px;
+  width: clamp(75%, 80%, 85%);
+  border-radius: 20px;
 }
 
 .ContenedorImagen h2 {
-    color: yellow;
-    position: absolute;
-    top: clamp(48vw, 49vw, 50vw);
-    left: clamp(3.5vw, 4vw, 4.5vw);
+  color: yellow;
+  position: absolute;
+  top: clamp(48vw, 49vw, 50vw);
+  left: clamp(3.5vw, 4vw, 4.5vw);
 }
 
 .texto {
-    font-size: clamp(1rem, 1.2rem, 1.5rem);
-    margin: 1rem;
-    padding: 0.7rem;
-    line-height: 1.2rem;
+  font-size: clamp(1rem, 1.2rem, 1.5rem);
+  margin: 1rem;
+  padding: 0.7rem;
+  line-height: 1.2rem;
 
 }
 
 .ContainerUnidad {
-    width: auto;
-    height: auto;
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 1rem;
-    flex-grow: 1;
-    justify-content: center;
-    border-radius: 5%;
-    border: solid, 0.3vw, #00CCFF;
-    box-shadow: 0px 0px 10px 5px rgba(255, 255, 255, 0.7);
-    overflow: hidden;
-    margin: 10vw;
-    background-image: url(./Multimedia/Contenedor.webp);
-    background-size: cover;
+  width: auto;
+  height: auto;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem;
+  flex-grow: 1;
+  justify-content: center;
+  border-radius: 5%;
+  border: solid, 0.3vw, #00CCFF;
+  box-shadow: 0px 0px 10px 5px rgba(255, 255, 255, 0.7);
+  overflow: hidden;
+  margin: 10vw;
+  background-image: url(./Multimedia/Contenedor.webp);
+  background-size: cover;
 }
 
 .ContainerUnidad img {
-    width: 80%;
-    border-radius: 20px;
-    object-fit: cover;
+  width: 80%;
+  border-radius: 20px;
+  object-fit: cover;
 }
 
 .label_titulo {
-    color: #ffe81f;
-    font-size: 1.5rem;
-    margin: 0px;
-    text-shadow: 0px 0px 10px rgb(255, 255, 255);
+  color: #ffe81f;
+  font-size: 1.5rem;
+  margin: 0px;
+  text-shadow: 0px 0px 10px rgb(255, 255, 255);
 
 }
 
 .img_character {
-    margin-top: 1rem;
-    width: 80%;
-    height: 300px;
-    object-fit: cover;
-    border-radius: 20px;
+  margin-top: 1rem;
+  width: 80%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 20px;
 }
 
 .titulo2 {
-    color: white;
-    font-size: 1.7rem;
+  color: white;
+  font-size: 1.7rem;
 }
 
 .label {
-    font-size: 1.2rem;
-    margin: 0px;
-    text-shadow: 0px 0px 10px rgb(255, 255, 255);
+  font-size: 1.2rem;
+  margin: 0px;
+  text-shadow: 0px 0px 10px rgb(255, 255, 255);
 }
 
 
 footer {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-image: url(./Multimedia/Fondo.webp);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url(./Multimedia/Fondo.webp);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 
 }
 
 .redes {
-    text-align: center;
-    margin-top: 20px;
-    margin-bottom: 1rem;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 1rem;
 }
 
 .redes a {
-    margin: 0 10px;
-    color: white;
-    font-size: 30px;
-    transition: color 1s ease;
+  margin: 0 10px;
+  color: white;
+  font-size: 30px;
+  transition: color 1s ease;
 }
 
 .redes a:hover {
-    color: yellow;
+  color: yellow;
 }
 
 
@@ -541,7 +671,7 @@ footer {
     }
 
     .ContainerUnidad {
-        width: 17vw;
+        width: clamp(17rem, 17.5rem,18rem);
         height: auto;
         margin: auto;
         display: flex;
@@ -554,7 +684,7 @@ footer {
 
     .titulo1 {
         font-family: "star-wars";
-        font-size: 4rem;
+        font-size: 2.5rem;
         position: absolute;
         letter-spacing: 5px;
         top: 0;
